@@ -1,0 +1,11 @@
+{
+  "name": "static-tailwind-site",
+  "version": "1.0.0",
+  "description": "Static HTML site with Tailwind CSS",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+} 
