@@ -1,10 +1,4 @@
-/* Base styles */
-body {
-    background-color: #000;
-    color: #e5e7eb;
-}
-
-/* Typography */
+/* Typography for prose content */
 .prose {
     max-width: 65ch;
     color: #e5e7eb;
@@ -85,22 +79,4 @@ body {
     max-width: 100%;
     height: auto;
     margin: 1.5em 0;
-}
-
-/* Custom scrollbar for the sidebar */
-aside::-webkit-scrollbar {
-    width: 6px;
-}
-
-aside::-webkit-scrollbar-track {
-    background: #1f2937;
-}
-
-aside::-webkit-scrollbar-thumb {
-    background: #4b5563;
-    border-radius: 3px;
-}
-
-aside::-webkit-scrollbar-thumb:hover {
-    background: #6b7280;
 } 

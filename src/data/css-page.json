@@ -66,14 +66,14 @@
               "url": "/learn/web-dev/frontend/html",
               "text": "HTML Basics"
             },
-            "is_selected": true
+            "is_selected": false
           },
           {
             "link": {
               "url": "/learn/web-dev/frontend/css",
               "text": "CSS Fundamentals"
             },
-            "is_selected": false
+            "is_selected": true
           },
           {
             "link": {
@@ -109,5 +109,5 @@
       }
     ]
   },
-  "content_file": "html-basics.md"
+  "content_file": "css-fundamentals.md"
 } 

@@ -1,0 +1,27 @@
+/* Code block styling */
+.code-block-wrapper {
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: #4b5563;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.copy-button:hover {
+    background-color: #6b7280;
+}
+
+.copy-button:active {
+    background-color: #374151;
+} 

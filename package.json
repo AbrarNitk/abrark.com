@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Static HTML site with Tailwind CSS",
   "scripts": {
-    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "build:css": "tailwindcss -i ./src/input.css -o ./src/static/css/styles.css",
     "build:pages": "node scripts/build-pages.js",
     "build": "npm run build:css && npm run build:pages",
-    "dev:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "dev:css": "tailwindcss -i ./src/input.css -o ./src/static/css/styles.css --watch",
     "dev:pages": "node scripts/build-pages.js --watch",
     "dev": "concurrently \"npm run dev:css\" \"npm run dev:pages\""
   },
@@ -15,6 +15,7 @@
     "handlebars": "^4.7.8",
     "fs-extra": "^11.2.0",
     "concurrently": "^8.2.2",
-    "chokidar": "^3.6.0"
+    "chokidar": "^3.6.0",
+    "marked": "^9.1.5"
   }
 } 

@@ -1,0 +1,29 @@
+/* Base styles */
+body {
+    background-color: #000;
+    color: #e5e7eb;
+}
+
+/* Layout specific styles */
+.sidebar-wrapper {
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for the sidebar */
+aside::-webkit-scrollbar {
+    width: 6px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+} 

@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Resources</title>
+    <title>CSS Fundamentals</title>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -26,7 +26,6 @@
 <header class="bg-black text-white px-8 py-4 flex items-center justify-between">
     <div class="flex items-center space-x-8">
         <a href="https://www.abrark.com" class="text-yellow-500 font-bold text-xl">
-<!--   TODO:         {{site.title}}-->
         AK
         </a>
         <nav class="flex items-center space-x-4">
@@ -41,9 +40,6 @@
                     <a href="{{this.link.url}}" class="hover:text-yellow-500">{{this.link.text}}</a>
                 {{/if}}
             {{/each}}
-            <!--TODO: handle which selection is selected there should be border around it -->
-            <!--            <a href="#" class="hover:text-yellow-500">Explore</a>-->
-            <!--            <a href="#" class="border-b-2 border-yellow-500 text-yellow-500">Learn</a>-->
 
         </nav>
     </div>
@@ -67,9 +63,9 @@
 <div class="bg-gray-900 text-gray-400 px-8 py-3 flex items-center justify-between">
 
     <div>
-        <!--        <span class="text-white">Learn</span>-->
-        <!--        <span class="mx-2">→</span>-->
-        <!--        <span class="text-white">Learning Resources</span>-->
+        <span class="text-white">Learn</span>
+        <span class="mx-2">→</span>
+        <span class="text-white">CSS</span>
     </div>
 
     <div class="flex items-center space-x-4">
@@ -82,8 +78,6 @@
             {{/if}}
         {{/each}}
 
-        <!--        <a href="#" class="hover:text-white">Learn</a>-->
-        <!--        <a href="#" class="hover:text-white">Featured Components</a>-->
     </div>
 
 </div>
@@ -100,7 +94,6 @@
                         <a href="{{this.link.url}}">{{this.link.text}}</a>
                     </h2>
                 {{/if}}
-            <!-- todo: It must create the  dropdown menu id sub-toc presents -->
             <ul class="space-y-2">
                 {{#each this.sub_toc}}
                     {{#if this.is_selected}}
@@ -150,4 +143,4 @@
 </script>
 
 </body>
-</html>
+</html> 
