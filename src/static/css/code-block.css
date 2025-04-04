@@ -1,27 +1,202 @@
 /* Code block styling */
 .code-block-wrapper {
     position: relative;
-    margin: 1.5rem 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    /* Ensure no extra background showing through */
+    background-color: #1f2937;
 }
 
+.dark .code-block-wrapper {
+    background-color: #e5e7eb;
+}
+
+/* Base styling for code blocks */
+.prose pre {
+    position: relative;
+    margin: 0 !important; /* Reset all margins */
+    padding: 1.25rem !important; 
+    padding-top: 2.5rem !important; /* Add space at top for the button */
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    background-color: #1f2937 !important; /* Dark background */
+    color: #e5e7eb !important;  /* Light text */
+    border-radius: 0.5rem;
+    /* Remove any borders that might be causing the issue */
+    border: none !important;
+    outline: none !important;
+}
+
+/* Fix blurry text in code blocks */
+.prose pre code {
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: pre;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-width: 0 !important;
+    border-radius: 0 !important;
+    color: inherit !important;
+    tab-size: 2;
+    -moz-tab-size: 2;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+/* Dark mode */
+.dark .prose pre {
+    background-color: #e5e7eb !important; /* Light background */
+    color: #111827 !important; /* Dark text */
+}
+
+/* Code highlighting colors - Dark Mode (default) */
+.language-html, .language-css, .language-javascript, .language-js, .language-typescript, .language-ts, .language-json {
+    color: #e5e7eb;
+}
+
+.language-html .token.tag, 
+.language-html .token.doctype,
+.language-css .token.selector {
+    color: #93c5fd; /* light blue */
+}
+
+.language-html .token.attr-name,
+.language-css .token.property {
+    color: #d1d5db; /* light gray */
+}
+
+.language-html .token.attr-value,
+.language-css .token.value,
+.language-javascript .token.string,
+.language-json .token.property {
+    color: #fbbf24; /* yellow */
+}
+
+.language-javascript .token.keyword,
+.language-javascript .token.operator {
+    color: #f472b6; /* pink */
+}
+
+/* Copy button styling */
 .copy-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    padding: 0.25rem 0.5rem;
-    background-color: var(--color-text-secondary);
-    color: var(--color-bg-primary);
-    border: none;
-    border-radius: 0.25rem;
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    padding: 0.35rem 0.7rem;
     font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    background-color: rgba(75, 85, 99, 0.7);
+    color: white;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
+    z-index: 50;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    /* Ensure button is visible */
+    opacity: 0.8;
+}
+
+.copy-button i {
+    font-size: 0.875rem;
+}
+
+.code-block-wrapper:hover .copy-button {
+    background-color: rgba(75, 85, 99, 0.9);
+    opacity: 1;
 }
 
 .copy-button:hover {
-    background-color: var(--color-accent);
+    background-color: rgba(251, 191, 36, 0.9) !important;
+    transform: translateY(-1px);
 }
 
 .copy-button:active {
-    background-color: var(--color-bg-secondary);
+    background-color: rgba(217, 119, 6, 0.9) !important;
+    transform: translateY(0);
+}
+
+/* Dark mode styling */
+.dark .copy-button {
+    background-color: rgba(75, 85, 99, 0.7);
+    color: white;
+}
+
+.dark .code-block-wrapper:hover .copy-button {
+    background-color: rgba(75, 85, 99, 0.9);
+}
+
+.dark .copy-button:hover {
+    background-color: rgba(217, 119, 6, 0.9) !important;
+    color: white;
+}
+
+/* Success and error states */
+.copy-button.success {
+    background-color: rgba(16, 185, 129, 0.9) !important;
+    color: white !important;
+}
+
+.copy-button.error {
+    background-color: rgba(239, 68, 68, 0.9) !important;
+    color: white !important;
+}
+
+/* Overrides for article to prevent unexpected spacing issues */
+.prose article {
+    margin: 0 !important; 
+}
+
+/* Ensure no border is visible around the code block */
+.prose pre::before,
+.prose pre::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Image styling */
+.prose img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.prose img:hover {
+    transform: scale(1.01);
+}
+
+/* Image styling for dark mode */
+.dark .prose img {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    filter: brightness(0.95) contrast(1.05);
+}
+
+/* Caption styling */
+.prose img + em {
+    display: block;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+.dark .prose img + em {
+    color: #6b7280;
 } 

@@ -57,3 +57,15 @@ h1 {
 | `padding` | Space inside an element |
 
 > CSS is what makes the web beautiful. Without CSS, websites would be plain text documents with minimal formatting. 
+
+.copy-button::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    z-index: -1;
+} 
+
+padding-top: 40px !important; /* Add space at top for the button */ 
