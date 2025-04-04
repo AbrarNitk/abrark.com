@@ -21,11 +21,11 @@
 </head>
 
 
-<body class="leading-relaxed text-gray-300 font-sans">
+<body class="leading-relaxed font-sans">
 
-<header class="bg-black text-white px-8 py-4 flex items-center justify-between">
+<header class="px-8 py-4 flex items-center justify-between" style="background-color: var(--color-bg-primary);">
     <div class="flex items-center space-x-8">
-        <a href="https://www.abrark.com" class="text-yellow-500 font-bold text-xl">
+        <a href="https://www.abrark.com" class="text-accent font-bold text-xl">
 <!--   TODO:         {{site.title}}-->
         AK
         </a>
@@ -36,9 +36,9 @@
             {{#each sections}}
 
                 {{#if this.is_selected}}
-                    <a href="{{this.link.url}}" class="text-yellow-500">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="text-accent">{{this.link.text}}</a>
                 {{else}}
-                    <a href="{{this.link.url}}" class="hover:text-yellow-500">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="hover:text-accent" style="color: var(--color-text-primary);">{{this.link.text}}</a>
                 {{/if}}
             {{/each}}
             <!--TODO: handle which selection is selected there should be border around it -->
@@ -49,22 +49,26 @@
     </div>
 
     <div class="flex items-center space-x-4">
-        <a href="https://www.github.com/AbrarNitk" class="hover:text-yellow-500"><i class="fab
+        <a href="https://www.github.com/AbrarNitk" class="hover:text-accent" style="color: var(--color-text-primary);"><i class="fab
         fa-github"></i></a>
         <div class="relative">
             <input
                     type="text"
                     placeholder="Search"
-                    class="bg-gray-800 text-gray-200 pl-8 pr-2 py-1 rounded focus:outline-none"
+                    class="text-gray-200 pl-8 pr-2 py-1 rounded focus:outline-none"
+                    style="background-color: var(--color-bg-secondary);"
             />
-            <i class="fa fa-search text-gray-400 absolute top-2 left-2"></i>
+            <i class="fa fa-search absolute top-2 left-2" style="color: var(--color-text-secondary);"></i>
         </div>
-        <a href="#" class="hover:text-yellow-500"><i class="fa-regular fa-bell"></i></a>
+        <button id="theme-toggle" class="p-1 rounded-full" style="background-color: var(--color-bg-secondary);">
+            <i id="theme-icon" class="fa fa-sun" style="color: var(--color-accent);"></i>
+        </button>
+        <a href="#" class="hover:text-accent" style="color: var(--color-text-primary);"><i class="fa-regular fa-bell"></i></a>
     </div>
 </header>
 
 <!--SubSections -->
-<div class="bg-gray-900 text-gray-400 px-8 py-3 flex items-center justify-between">
+<div class="px-8 py-3 flex items-center justify-between" style="background-color: var(--color-bg-secondary); color: var(--color-text-secondary);">
 
     <div>
         <!--        <span class="text-white">Learn</span>-->
@@ -76,9 +80,9 @@
 
         {{#each subsections}}
             {{#if this.is_selected}}
-                <a href="{{this.link.url}}" class="text-white">{{this.link.text}}</a>
+                <a href="{{this.link.url}}" style="color: var(--color-text-primary);">{{this.link.text}}</a>
             {{else}}
-                <a href="{{this.link.url}}" class="hover:text-white">{{this.link.text}}</a>
+                <a href="{{this.link.url}}" style="color: var(--color-text-secondary);" class="hover:text-white">{{this.link.text}}</a>
             {{/if}}
         {{/each}}
 
@@ -89,14 +93,14 @@
 </div>
 
 <div class="mx-auto flex">
-    <aside class="w-64 bg-black text-gray-300 sticky top-0 h-screen overflow-y-auto p-6">
+    <aside class="w-64 sticky top-0 h-screen overflow-y-auto p-6" style="background-color: var(--color-bg-primary); color: var(--color-text-secondary);">
         {{#each toc.items}}
                 {{#if this.is_selected}}
-                    <h2 class="text-yellow-500 mb-4">
+                    <h2 class="text-accent mb-4">
                         <a href="{{this.link.url}}">{{this.link.text}}</a>
                     </h2>
                 {{else}}
-                    <h2 class="hover:text-yellow-500 mb-4">
+                    <h2 class="hover:text-accent mb-4" style="color: var(--color-text-primary);">
                         <a href="{{this.link.url}}">{{this.link.text}}</a>
                     </h2>
                 {{/if}}
@@ -106,12 +110,12 @@
                     {{#if this.is_selected}}
                         <li class="pl-4 pb-4">
                             <a href="{{this.link.url}}"
-                               class="text-yellow-500">{{this.link.text}}</a>
+                               class="text-accent">{{this.link.text}}</a>
                         </li>
                     {{else}}
                         <li class="pl-4 pb-4">
                             <a href="{{this.link.url}}"
-                               class="hover:text-yellow-500">{{this.link.text}}</a>
+                               class="hover:text-accent" style="color: var(--color-text-secondary);">{{this.link.text}}</a>
                         </li>
                     {{/if}}
                 {{/each}}
@@ -121,7 +125,7 @@
 
 
     <!-- Main Content Area Starts   -->
-    <main class="flex-1 p-6 bg-black overflow-y-scroll no-scrollbar">
+    <main class="flex-1 p-6 overflow-y-scroll no-scrollbar" style="background-color: var(--color-bg-primary);">
 
 
         <article
@@ -139,12 +143,23 @@
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
 
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || 
+        (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+    }
+
     themeToggle.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
+        
         if (document.documentElement.classList.contains('dark')) {
             themeIcon.classList.replace('fa-sun', 'fa-moon');
+            localStorage.setItem('theme', 'dark');
         } else {
             themeIcon.classList.replace('fa-moon', 'fa-sun');
+            localStorage.setItem('theme', 'light');
         }
     });
 </script>

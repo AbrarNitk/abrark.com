@@ -1,11 +1,11 @@
 /* Typography for prose content */
 .prose {
     max-width: 65ch;
-    color: #e5e7eb;
+    color: var(--color-text-primary);
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4 {
-    color: #fbbf24; /* yellow-500 */
+    color: var(--color-accent);
     margin-top: 2em;
     margin-bottom: 1em;
     font-weight: 600;
@@ -35,7 +35,7 @@
 }
 
 .prose a {
-    color: #fbbf24;
+    color: var(--color-accent);
     text-decoration: none;
 }
 
@@ -45,14 +45,14 @@
 
 /* Code blocks */
 .prose pre {
-    background-color: #1f2937;
+    background-color: var(--color-bg-secondary);
     padding: 1em;
     border-radius: 0.5rem;
     overflow-x: auto;
 }
 
 .prose code {
-    background-color: #1f2937;
+    background-color: var(--color-bg-secondary);
     padding: 0.2em 0.4em;
     border-radius: 0.25rem;
     font-size: 0.875em;
@@ -70,7 +70,7 @@
 
 /* Blockquotes */
 .prose blockquote {
-    border-left: 4px solid #fbbf24;
+    border-left: 4px solid var(--color-accent);
     padding-left: 1em;
     margin-left: 0;
     margin-right: 0;
@@ -85,12 +85,12 @@
 }
 
 .prose th, .prose td {
-    border: 1px solid #374151;
+    border: 1px solid var(--color-bg-secondary);
     padding: 0.5em 1em;
 }
 
 .prose th {
-    background-color: #1f2937;
+    background-color: var(--color-bg-secondary);
 }
 
 /* Images */

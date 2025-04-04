@@ -7,6 +7,15 @@
   --color-accent: #fbbf24;
 }
 
+/* Dark mode theme variables - will be overridden when dark class is added */
+:root.dark {
+  --color-bg-primary: #f9fafb;
+  --color-bg-secondary: #e5e7eb;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-accent: #d97706;
+}
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
@@ -34,4 +43,9 @@ a:hover {
 
 .bg-secondary {
   background-color: var(--color-bg-secondary);
+}
+
+/* Theme transition */
+body, a, h1, h2, h3, h4, h5, h6 {
+  transition: color 0.3s ease, background-color 0.3s ease;
 } 

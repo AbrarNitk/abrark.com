@@ -1,7 +1,7 @@
 /* Base styles */
 body {
-    background-color: #000;
-    color: #e5e7eb;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
 }
 
 /* Layout specific styles */
@@ -16,11 +16,11 @@ aside::-webkit-scrollbar {
 }
 
 aside::-webkit-scrollbar-track {
-    background: #1f2937;
+    background: var(--color-bg-secondary);
 }
 
 aside::-webkit-scrollbar-thumb {
-    background: #4b5563;
+    background: var(--color-text-secondary);
     border-radius: 3px;
 }
 
