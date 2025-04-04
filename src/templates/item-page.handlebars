@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Resources</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/output.css">
+</head>
+
+
+<body class="leading-relaxed text-gray-300 font-sans">
+
+<header class="bg-black text-white px-8 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-8">
+        <a href="https://www.abrark.com" class="text-yellow-500 font-bold text-xl">
+<!--   TODO:         {{site.title}}-->
+        AK
+        </a>
+        <nav class="flex items-center space-x-4">
+
+            <!-- Sections -->
+
+            {{#each sections}}
+
+                {{#if this.is_selected}}
+                    <a href="{{this.link.url}}" class="text-yellow-500">{{this.link.text}}</a>
+                {{else}}
+                    <a href="{{this.link.url}}" class="hover:text-yellow-500">{{this.link.text}}</a>
+                {{/if}}
+            {{/each}}
+            <!--TODO: handle which selection is selected there should be border around it -->
+            <!--            <a href="#" class="hover:text-yellow-500">Explore</a>-->
+            <!--            <a href="#" class="border-b-2 border-yellow-500 text-yellow-500">Learn</a>-->
+
+        </nav>
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <a href="https://www.github.com/AbrarNitk" class="hover:text-yellow-500"><i class="fab
+        fa-github"></i></a>
+        <div class="relative">
+            <input
+                    type="text"
+                    placeholder="Search"
+                    class="bg-gray-800 text-gray-200 pl-8 pr-2 py-1 rounded focus:outline-none"
+            />
+            <i class="fa fa-search text-gray-400 absolute top-2 left-2"></i>
+        </div>
+        <a href="#" class="hover:text-yellow-500"><i class="fa-regular fa-bell"></i></a>
+    </div>
+</header>
+
+<!--SubSections -->
+<div class="bg-gray-900 text-gray-400 px-8 py-3 flex items-center justify-between">
+
+    <div>
+        <!--        <span class="text-white">Learn</span>-->
+        <!--        <span class="mx-2">→</span>-->
+        <!--        <span class="text-white">Learning Resources</span>-->
+    </div>
+
+    <div class="flex items-center space-x-4">
+
+        {{#each subsections}}
+            {{#if this.is_selected}}
+                <a href="{{this.link.url}}" class="text-white">{{this.link.text}}</a>
+            {{else}}
+                <a href="{{this.link.url}}" class="hover:text-white">{{this.link.text}}</a>
+            {{/if}}
+        {{/each}}
+
+        <!--        <a href="#" class="hover:text-white">Learn</a>-->
+        <!--        <a href="#" class="hover:text-white">Featured Components</a>-->
+    </div>
+
+</div>
+
+<div class="mx-auto flex">
+    <aside class="w-64 bg-black text-gray-300 sticky top-0 h-screen overflow-y-auto p-6">
+        {{#each toc.items}}
+                {{#if this.is_selected}}
+                    <h2 class="text-yellow-500 mb-4">
+                        <a href="{{this.link.url}}">{{this.link.text}}</a>
+                    </h2>
+                {{else}}
+                    <h2 class="hover:text-yellow-500 mb-4">
+                        <a href="{{this.link.url}}">{{this.link.text}}</a>
+                    </h2>
+                {{/if}}
+            <!-- todo: It must create the  dropdown menu id sub-toc presents -->
+            <ul class="space-y-2">
+                {{#each this.sub_toc}}
+                    {{#if this.is_selected}}
+                        <li class="pl-4 pb-4">
+                            <a href="{{this.link.url}}"
+                               class="text-yellow-500">{{this.link.text}}</a>
+                        </li>
+                    {{else}}
+                        <li class="pl-4 pb-4">
+                            <a href="{{this.link.url}}"
+                               class="hover:text-yellow-500">{{this.link.text}}</a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        {{/each}}
+    </aside>
+
+
+    <!-- Main Content Area Starts   -->
+    <main class="flex-1 p-6 bg-black overflow-y-scroll no-scrollbar">
+
+
+        <article
+                class="prose prose-base md:prose-lg lg:prose-xl dark:prose-invert prose-img:rounded-xl">
+
+            {{{ content }}}
+        </article>
+
+    </main>
+    <!-- Main Content Area Ends   -->
+
+</div>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        if (document.documentElement.classList.contains('dark')) {
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        } else {
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+    });
+</script>
+
+</body>
+</html>

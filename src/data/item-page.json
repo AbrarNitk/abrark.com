@@ -1,0 +1,113 @@
+{
+  "sections": [
+    {
+      "link": {
+        "url": "/learn",
+        "text": "Learn"
+      },
+      "is_selected": true
+    },
+    {
+      "link": {
+        "url": "/explore",
+        "text": "Explore"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/projects",
+        "text": "Projects"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/blog",
+        "text": "Blog"
+      },
+      "is_selected": false
+    }
+  ],
+  "subsections": [
+    {
+      "link": {
+        "url": "/learn/web-dev",
+        "text": "Web Development"
+      },
+      "is_selected": true
+    },
+    {
+      "link": {
+        "url": "/learn/web-dev/frontend",
+        "text": "Frontend"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/learn/web-dev/backend",
+        "text": "Backend"
+      },
+      "is_selected": false
+    }
+  ],
+  "toc": {
+    "items": [
+      {
+        "link": {
+          "url": "/learn/web-dev/frontend",
+          "text": "Frontend Development"
+        },
+        "is_selected": true,
+        "sub_toc": [
+          {
+            "link": {
+              "url": "/learn/web-dev/frontend/html",
+              "text": "HTML Basics"
+            },
+            "is_selected": true
+          },
+          {
+            "link": {
+              "url": "/learn/web-dev/frontend/css",
+              "text": "CSS Fundamentals"
+            },
+            "is_selected": false
+          },
+          {
+            "link": {
+              "url": "/learn/web-dev/frontend/javascript",
+              "text": "JavaScript Essentials"
+            },
+            "is_selected": false
+          }
+        ]
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false,
+        "sub_toc": [
+          {
+            "link": {
+              "url": "/learn/web-dev/backend/nodejs",
+              "text": "Node.js"
+            },
+            "is_selected": false
+          },
+          {
+            "link": {
+              "url": "/learn/web-dev/backend/python",
+              "text": "Python"
+            },
+            "is_selected": false
+          }
+        ]
+      }
+    ]
+  },
+  "content": "<h1>HTML Basics</h1>\n\n<p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page and consists of a series of elements.</p>\n\n<h2>Basic HTML Document Structure</h2>\n<pre><code>&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n&lt;head&gt;\n    &lt;title&gt;Page Title&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;This is a heading&lt;/h1&gt;\n    &lt;p&gt;This is a paragraph.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;</code></pre>\n\n<h2>Common HTML Elements</h2>\n<ul>\n    <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> - Headings</li>\n    <li><code>&lt;p&gt;</code> - Paragraphs</li>\n    <li><code>&lt;a&gt;</code> - Links</li>\n    <li><code>&lt;img&gt;</code> - Images</li>\n    <li><code>&lt;div&gt;</code> - Container</li>\n</ul>\n\n<blockquote>\n    HTML is the backbone of every website. Understanding HTML is essential for web development.\n</blockquote>"
+} 

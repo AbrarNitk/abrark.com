@@ -1,0 +1,106 @@
+/* Base styles */
+body {
+    background-color: #000;
+    color: #e5e7eb;
+}
+
+/* Typography */
+.prose {
+    max-width: 65ch;
+    color: #e5e7eb;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+    color: #fbbf24; /* yellow-500 */
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.75;
+}
+
+.prose a {
+    color: #fbbf24;
+    text-decoration: none;
+}
+
+.prose a:hover {
+    text-decoration: underline;
+}
+
+/* Code blocks */
+.prose pre {
+    background-color: #1f2937;
+    padding: 1em;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.prose code {
+    background-color: #1f2937;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+
+/* Lists */
+.prose ul, .prose ol {
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.prose li {
+    margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+.prose blockquote {
+    border-left: 4px solid #fbbf24;
+    padding-left: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-style: italic;
+}
+
+/* Tables */
+.prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+}
+
+.prose th, .prose td {
+    border: 1px solid #374151;
+    padding: 0.5em 1em;
+}
+
+.prose th {
+    background-color: #1f2937;
+}
+
+/* Images */
+.prose img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em 0;
+}
+
+/* Custom scrollbar for the sidebar */
+aside::-webkit-scrollbar {
+    width: 6px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+} 
