@@ -9,71 +9,95 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#000000',
-          dark: '#f9fafb'
+          DEFAULT: '#2563EB',
+          dark: '#38BDF8'
         },
         secondary: {
-          DEFAULT: '#111827',
-          dark: '#e5e7eb'
+          DEFAULT: '#7C3AED',
+          dark: '#C4B5FD'
         },
         accent: {
-          DEFAULT: '#fbbf24',
-          dark: '#d97706'
+          DEFAULT: '#F59E0B',
+          dark: '#FBBF24'
+        },
+        success: {
+          DEFAULT: '#059669',
+          dark: '#10B981'
+        },
+        error: {
+          DEFAULT: '#DC2626',
+          dark: '#F87171'
+        },
+        background: {
+          DEFAULT: '#FFFFFF',
+          secondary: '#EFF6FF',
+          dark: '#0F172A',
+          darkSecondary: '#1E293B'
+        },
+        text: {
+          DEFAULT: '#1F2937',
+          heading: '#111827',
+          dark: '#E2E8F0',
+          darkHeading: '#F8FAFC'
+        },
+        border: {
+          DEFAULT: '#CBD5E1',
+          dark: '#475569'
         }
       },
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.300'),
+            color: theme('colors.text.DEFAULT'),
             h1: {
-              color: theme('colors.accent.DEFAULT'),
+              color: theme('colors.text.heading'),
             },
             h2: {
-              color: theme('colors.accent.DEFAULT'),
+              color: theme('colors.text.heading'),
             },
             h3: {
-              color: theme('colors.accent.DEFAULT'),
+              color: theme('colors.text.heading'),
             },
             h4: {
-              color: theme('colors.accent.DEFAULT'),
+              color: theme('colors.text.heading'),
             },
             strong: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.text.heading'),
             },
             a: {
-              color: theme('colors.accent.DEFAULT'),
+              color: theme('colors.primary.DEFAULT'),
               '&:hover': {
-                color: theme('colors.accent.DEFAULT'),
+                color: theme('colors.primary.DEFAULT'),
                 textDecoration: 'underline',
               },
             },
             code: {
-              color: theme('colors.gray.200'),
-              backgroundColor: theme('colors.gray.800'),
+              color: theme('colors.text.DEFAULT'),
+              backgroundColor: theme('colors.background.secondary'),
               padding: '0.2em 0.4em',
               borderRadius: '0.25rem',
             },
             'td code': {
-              color: theme('colors.gray.200'),
-              backgroundColor: theme('colors.gray.800'),
+              color: theme('colors.text.DEFAULT'),
+              backgroundColor: theme('colors.background.secondary'),
               padding: '0.2em 0.4em',
               borderRadius: '0.25rem',
               fontWeight: '500',
             },
             pre: {
-              backgroundColor: '#1f2937',
-              color: '#e5e7eb',
+              backgroundColor: theme('colors.background.secondary'),
+              color: theme('colors.text.DEFAULT'),
             },
             'pre code': {
               backgroundColor: 'transparent',
               color: 'inherit',
             },
             blockquote: {
-              color: theme('colors.gray.300'),
+              color: theme('colors.text.DEFAULT'),
               borderLeftColor: theme('colors.accent.DEFAULT'),
             },
             hr: {
-              borderColor: theme('colors.gray.700'),
+              borderColor: theme('colors.border.DEFAULT'),
             },
             table: {
               width: '100%',
@@ -84,8 +108,8 @@ module.exports = {
               borderCollapse: 'collapse',
             },
             thead: {
-              color: theme('colors.gray.200'),
-              borderBottomColor: theme('colors.gray.600'),
+              color: theme('colors.text.heading'),
+              borderBottomColor: theme('colors.border.DEFAULT'),
               borderBottomWidth: '1px',
             },
             'thead th': {
@@ -99,7 +123,7 @@ module.exports = {
             },
             'tbody tr': {
               borderBottomWidth: '1px',
-              borderBottomColor: theme('colors.gray.700'),
+              borderBottomColor: theme('colors.border.DEFAULT'),
             },
             'tbody tr:last-child': {
               borderBottomWidth: '0',
@@ -115,56 +139,56 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.800'),
+            color: theme('colors.text.dark'),
             h1: {
-              color: theme('colors.accent.dark'),
+              color: theme('colors.text.darkHeading'),
             },
             h2: {
-              color: theme('colors.accent.dark'),
+              color: theme('colors.text.darkHeading'),
             },
             h3: {
-              color: theme('colors.accent.dark'),
+              color: theme('colors.text.darkHeading'),
             },
             h4: {
-              color: theme('colors.accent.dark'),
+              color: theme('colors.text.darkHeading'),
             },
             strong: {
-              color: theme('colors.gray.900'),
+              color: theme('colors.text.darkHeading'),
             },
             a: {
-              color: theme('colors.accent.dark'),
+              color: theme('colors.primary.dark'),
               '&:hover': {
-                color: theme('colors.accent.dark'),
+                color: theme('colors.primary.dark'),
                 textDecoration: 'underline',
               },
             },
             code: {
-              color: theme('colors.gray.900'),
-              backgroundColor: theme('colors.gray.200'),
+              color: theme('colors.text.dark'),
+              backgroundColor: theme('colors.background.darkSecondary'),
               padding: '0.2em 0.4em',
               borderRadius: '0.25rem',
             },
             'td code': {
-              color: theme('colors.gray.900'),
-              backgroundColor: theme('colors.gray.200'),
+              color: theme('colors.text.dark'),
+              backgroundColor: theme('colors.background.darkSecondary'),
               padding: '0.2em 0.4em',
               borderRadius: '0.25rem',
               fontWeight: '500',
             },
             pre: {
-              backgroundColor: '#e5e7eb',
-              color: '#111827',
+              backgroundColor: theme('colors.background.darkSecondary'),
+              color: theme('colors.text.dark'),
             },
             'pre code': {
               backgroundColor: 'transparent',
               color: 'inherit',
             },
             blockquote: {
-              color: theme('colors.gray.800'),
+              color: theme('colors.text.dark'),
               borderLeftColor: theme('colors.accent.dark'),
             },
             hr: {
-              borderColor: theme('colors.gray.300'),
+              borderColor: theme('colors.border.dark'),
             },
             table: {
               width: '100%',
@@ -175,8 +199,8 @@ module.exports = {
               borderCollapse: 'collapse',
             },
             thead: {
-              color: theme('colors.gray.900'),
-              borderBottomColor: theme('colors.gray.400'),
+              color: theme('colors.text.darkHeading'),
+              borderBottomColor: theme('colors.border.dark'),
               borderBottomWidth: '1px',
             },
             'thead th': {
@@ -190,7 +214,7 @@ module.exports = {
             },
             'tbody tr': {
               borderBottomWidth: '1px',
-              borderBottomColor: theme('colors.gray.300'),
+              borderBottomColor: theme('colors.border.dark'),
             },
             'tbody tr:last-child': {
               borderBottomWidth: '0',

@@ -5,13 +5,16 @@
     margin-bottom: 1.5rem;
     border-radius: 0.5rem;
     overflow: hidden;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     /* Ensure no extra background showing through */
-    background-color: #1f2937;
+    background-color: #EFF6FF;
+    border: 1px solid rgba(203, 213, 225, 0.4);
 }
 
 .dark .code-block-wrapper {
-    background-color: #e5e7eb;
+    background-color: #1E293B;
+    border: 1px solid rgba(71, 85, 105, 0.4);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* Base styling for code blocks */
@@ -24,8 +27,8 @@
     font-size: 0.875rem;
     line-height: 1.7;
     overflow-x: auto;
-    background-color: #1f2937 !important; /* Dark background */
-    color: #e5e7eb !important;  /* Light text */
+    background-color: #EFF6FF !important; /* Light blue background */
+    color: #1F2937 !important;  /* Darker text for contrast */
     border-radius: 0.5rem;
     /* Remove any borders that might be causing the issue */
     border: none !important;
@@ -54,13 +57,13 @@
 
 /* Dark mode */
 .dark .prose pre {
-    background-color: #e5e7eb !important; /* Light background */
-    color: #111827 !important; /* Dark text */
+    background-color: #1E293B !important; /* Dark slate background */
+    color: #E2E8F0 !important; /* Light gray text */
 }
 
-/* Code highlighting colors - Dark Mode (default) */
+/* Code highlighting colors - Light Mode (default) */
 .language-html, .language-css, .language-javascript, .language-js, .language-typescript, .language-ts, .language-json {
-    color: #e5e7eb;
+    color: #334155;
 }
 
 .language-html .token.tag, 
@@ -95,7 +98,7 @@
     font-size: 0.75rem;
     font-weight: 500;
     border-radius: 0.375rem;
-    background-color: rgba(75, 85, 99, 0.7);
+    background-color: rgba(37, 99, 235, 0.8); /* Primary blue with opacity */
     color: white;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -104,9 +107,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
     /* Ensure button is visible */
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .copy-button i {
@@ -114,43 +117,56 @@
 }
 
 .code-block-wrapper:hover .copy-button {
-    background-color: rgba(75, 85, 99, 0.9);
+    background-color: rgba(37, 99, 235, 1); /* Solid primary blue on hover */
     opacity: 1;
 }
 
 .copy-button:hover {
-    background-color: rgba(251, 191, 36, 0.9) !important;
+    background-color: rgba(245, 158, 11, 0.9) !important; /* Accent amber on hover */
     transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .copy-button:active {
-    background-color: rgba(217, 119, 6, 0.9) !important;
+    background-color: rgba(245, 158, 11, 1) !important; /* Solid accent amber on active */
     transform: translateY(0);
 }
 
 /* Dark mode styling */
 .dark .copy-button {
-    background-color: rgba(75, 85, 99, 0.7);
+    background-color: rgba(56, 189, 248, 0.8); /* Primary dark blue with opacity */
     color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .dark .code-block-wrapper:hover .copy-button {
-    background-color: rgba(75, 85, 99, 0.9);
+    background-color: rgba(56, 189, 248, 1); /* Solid primary dark blue */
 }
 
 .dark .copy-button:hover {
-    background-color: rgba(217, 119, 6, 0.9) !important;
+    background-color: rgba(251, 191, 36, 0.9) !important; /* Accent gold on hover */
     color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
 /* Success and error states */
-.copy-button.success {
-    background-color: rgba(16, 185, 129, 0.9) !important;
+.copy-button.copy-success {
+    background-color: rgba(5, 150, 105, 0.9) !important; /* Success green */
     color: white !important;
 }
 
-.copy-button.error {
-    background-color: rgba(239, 68, 68, 0.9) !important;
+.dark .copy-button.copy-success {
+    background-color: rgba(16, 185, 129, 0.9) !important; /* Dark success green */
+    color: white !important;
+}
+
+.copy-button.copy-error {
+    background-color: rgba(220, 38, 38, 0.9) !important; /* Error red */
+    color: white !important;
+}
+
+.dark .copy-button.copy-error {
+    background-color: rgba(248, 113, 113, 0.9) !important; /* Dark error red */
     color: white !important;
 }
 
@@ -173,18 +189,25 @@
     height: auto;
     margin: 2rem auto;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(203, 213, 225, 0.5);
 }
 
 .prose img:hover {
-    transform: scale(1.01);
+    transform: scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Image styling for dark mode */
 .dark .prose img {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
     filter: brightness(0.95) contrast(1.05);
+    border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+.dark .prose img:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
 }
 
 /* Caption styling */
@@ -192,88 +215,25 @@
     display: block;
     text-align: center;
     font-size: 0.875rem;
-    color: #9ca3af;
+    color: #6B7280;
     margin-top: -1rem;
     margin-bottom: 2rem;
 }
 
 .dark .prose img + em {
-    color: #6b7280;
+    color: #9CA3AF;
 }
 
-/* Code Block Styles */
-.code-block-wrapper {
-    position: relative;
-    margin: 1.5rem 0;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-    background-color: #1e1e1e;
+/* Syntax highlighting for light theme */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6B7280 !important; /* Gray */
 }
 
-html.dark .code-block-wrapper {
-    background-color: #1e1e1e;
-}
-
-pre {
-    position: relative;
-    padding: 1.5rem 1rem 1.5rem 0.5rem;
-    border-radius: 0.5rem;
-    overflow-x: auto;
-    background-color: #1e1e1e !important;
-    color: #e5e7eb !important;
-    margin: 0;
-    border: none;
-    font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: 0.875rem;
-    line-height: 1.5;
-}
-
-html.dark pre {
-    background-color: #1e1e1e !important;
-    color: #e5e7eb !important;
-}
-
-pre code {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    display: block;
-    counter-reset: line;
-    padding-left: 3.5rem !important;
-    white-space: pre;
-    background-color: transparent !important;
-    color: inherit !important;
-    tab-size: 2;
-    -moz-tab-size: 2;
-}
-
-pre code .line {
-    position: relative;
-    display: block !important;
-    width: 100%;
-    min-height: 1.5rem;
-}
-
-pre code .line:before {
-    content: counter(line);
-    counter-increment: line;
-    position: absolute;
-    left: -3rem;
-    width: 2.5rem;
-    color: #6b7280;
-    text-align: right;
-    user-select: none;
-    opacity: 0.6;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 0.5rem;
-}
-
-html.dark pre code .line:before {
-    color: #9ca3af;
+.token.punctuation {
+  color: #4B5563 !important; /* Darker gray */
 }
 
 /* Syntax highlighting styles for all languages */
@@ -282,12 +242,11 @@ html.dark pre code .line:before {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #6b7280;
-  font-style: italic;
+  color: #6B7280 !important; /* Gray */
 }
 
 .token.punctuation {
-  color: #9ca3af;
+  color: #475569 !important; /* Slate */
 }
 
 .token.namespace {
@@ -300,7 +259,7 @@ html.dark pre code .line:before {
 .token.number,
 .token.constant,
 .token.symbol {
-  color: #f59e0b;
+  color: #3B82F6 !important; /* Primary blue */
 }
 
 .token.selector,
@@ -308,7 +267,7 @@ html.dark pre code .line:before {
 .token.string,
 .token.char,
 .token.builtin {
-  color: #10b981;
+  color: #10B981 !important; /* Success green */
 }
 
 .token.operator,
@@ -316,24 +275,24 @@ html.dark pre code .line:before {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #a78bfa;
+  color: #8B5CF6 !important; /* Secondary purple */
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #8b5cf6;
+  color: #8B5CF6 !important; /* Secondary purple */
 }
 
 .token.function,
 .token.class-name {
-  color: #3b82f6;
+  color: #3B82F6 !important; /* Primary blue */
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: #ec4899;
+  color: #F59E0B !important; /* Accent amber */
 }
 
 /* Language-specific styles */
@@ -362,25 +321,25 @@ code.language-css .token.selector {
 /* JavaScript/TypeScript */
 code.language-javascript .token.keyword,
 code.language-typescript .token.keyword {
-  color: #8b5cf6;
+  color: #8B5CF6 !important; /* Secondary purple */
 }
 
 code.language-javascript .token.function,
 code.language-typescript .token.function {
-  color: #3b82f6;
+  color: #3B82F6 !important; /* Primary blue */
 }
 
 /* Python */
 code.language-python .token.keyword {
-  color: #8b5cf6;
+  color: #8B5CF6 !important; /* Secondary purple */
 }
 
 code.language-python .token.decorator {
-  color: #f59e0b;
+  color: #F59E0B !important; /* Accent amber */
 }
 
 code.language-python .token.function {
-  color: #3b82f6;
+  color: #3B82F6 !important; /* Primary blue */
 }
 
 code.language-python .token.class {
@@ -455,11 +414,11 @@ html.dark .token.comment,
 html.dark .token.prolog,
 html.dark .token.doctype,
 html.dark .token.cdata {
-  color: #9ca3af;
+  color: #9CA3AF !important; /* Gray */
 }
 
 html.dark .token.punctuation {
-  color: #cbd5e1;
+  color: #CBD5E1 !important; /* Light gray */
 }
 
 html.dark .token.property,
@@ -468,7 +427,7 @@ html.dark .token.boolean,
 html.dark .token.number,
 html.dark .token.constant,
 html.dark .token.symbol {
-  color: #fbbf24;
+  color: #60A5FA !important; /* Primary dark blue */
 }
 
 html.dark .token.selector,
@@ -476,7 +435,7 @@ html.dark .token.attr-name,
 html.dark .token.string,
 html.dark .token.char,
 html.dark .token.builtin {
-  color: #34d399;
+  color: #34D399 !important; /* Success dark green */
 }
 
 html.dark .token.operator,
@@ -484,115 +443,24 @@ html.dark .token.entity,
 html.dark .token.url,
 html.dark .language-css .token.string,
 html.dark .style .token.string {
-  color: #a78bfa;
+  color: #A78BFA !important; /* Secondary dark purple */
 }
 
 html.dark .token.atrule,
 html.dark .token.attr-value,
 html.dark .token.keyword {
-  color: #a78bfa;
+  color: #A78BFA !important; /* Secondary dark purple */
 }
 
 html.dark .token.function,
 html.dark .token.class-name {
-  color: #60a5fa;
+  color: #60A5FA !important; /* Primary dark blue */
 }
 
-.copy-button {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: rgba(75, 85, 99, 0.7);
-    border: none;
-    border-radius: 0.375rem;
-    padding: 0.35rem 0.7rem;
-    font-size: 0.75rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    z-index: 10;
-}
-
-html.dark .copy-button {
-    background-color: rgba(75, 85, 99, 0.7);
-    color: white;
-}
-
-.copy-button:hover {
-    background-color: rgba(75, 85, 99, 0.9);
-}
-
-html.dark .copy-button:hover {
-    background-color: rgba(75, 85, 99, 0.9);
-}
-
-.copy-button svg {
-    width: 0.875rem;
-    height: 0.875rem;
-    margin-right: 0.25rem;
-}
-
-.copy-success {
-    background-color: rgba(72, 187, 120, 0.7) !important;
-}
-
-html.dark .copy-success {
-    background-color: rgba(56, 161, 105, 0.7) !important;
-}
-
-.copy-error {
-    background-color: rgba(245, 101, 101, 0.7) !important;
-}
-
-html.dark .copy-error {
-    background-color: rgba(229, 62, 62, 0.7) !important;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 2rem auto;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s ease;
-}
-
-img:hover {
-    transform: scale(1.01);
-}
-
-html.dark img {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18);
-    filter: brightness(0.9) contrast(1.1);
-}
-
-img + em {
-    display: block;
-    text-align: center;
-    font-size: 0.875rem;
-    color: #4a5568;
-    margin-top: -1rem;
-    margin-bottom: 2rem;
-}
-
-html.dark img + em {
-    color: #a0aec0;
-}
-
-/* Custom theme overrides */
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #6b7280 !important;
-}
-
-.token.punctuation {
-  color: #9ca3af !important;
+html.dark .token.regex,
+html.dark .token.important,
+html.dark .token.variable {
+  color: #FBBF24 !important; /* Accent dark gold */
 }
 
 /* Additional language support override if needed */
@@ -608,7 +476,7 @@ code[class*="language-rust"] .token.macro {
 }
 
 code[class*="language-python"] .token.decorator {
-  color: #f59e0b !important;
+  color: #F59E0B !important; /* Accent amber */
 }
 
 code[class*="language-yaml"] .token.key,
@@ -625,5 +493,5 @@ html.dark .token.comment,
 html.dark .token.prolog,
 html.dark .token.doctype,
 html.dark .token.cdata {
-  color: #9ca3af !important;
+  color: #9CA3AF !important; /* Gray */
 } 
