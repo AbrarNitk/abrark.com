@@ -12,6 +12,7 @@ const config = {
   staticDir: path.join(__dirname, '../src/static'),
   contentDir: path.join(__dirname, '../src/content'),
   partialsDir: path.join(__dirname, '../src/templates/partials'),
+  srcDir: path.join(__dirname, '../src'),
 };
 
 // Ensure output directory exists
@@ -26,6 +27,27 @@ async function copyStaticFiles() {
     console.log('Static files copied successfully');
   } catch (error) {
     console.warn('Error copying static files:', error);
+  }
+}
+
+// Copy HTML files from src root to dist
+async function copyRootHtmlFiles() {
+  try {
+    // Copy index.html and cv.html from src to dist
+    const htmlFiles = ['index.html', 'cv.html'];
+    for (const file of htmlFiles) {
+      const srcPath = path.join(config.srcDir, file);
+      const destPath = path.join(config.outputDir, file);
+      
+      if (await fs.pathExists(srcPath)) {
+        await fs.copy(srcPath, destPath, { overwrite: true });
+        console.log(`Copied ${file} to dist folder`);
+      } else {
+        console.warn(`${file} not found in src folder`);
+      }
+    }
+  } catch (error) {
+    console.warn('Error copying root HTML files:', error);
   }
 }
 
@@ -110,6 +132,7 @@ async function compileTemplate(templatePath) {
 // Build all templates
 async function buildAll() {
   await copyStaticFiles();
+  await copyRootHtmlFiles(); // Copy index.html and cv.html
   await registerPartials();
   const templates = await fs.readdir(config.templatesDir);
   for (const template of templates) {
@@ -126,7 +149,9 @@ function watch() {
     path.join(config.templatesDir, '**/*.handlebars'),
     path.join(config.dataDir, '**/*.json'),
     path.join(config.staticDir, '**/*'),
-    path.join(config.contentDir, '**/*.md')
+    path.join(config.contentDir, '**/*.md'),
+    path.join(config.srcDir, 'index.html'),
+    path.join(config.srcDir, 'cv.html')
   ]);
   
   watcher.on('change', async (filePath) => {
@@ -145,6 +170,9 @@ function watch() {
     } else if (filePath.endsWith('.md')) {
       // Rebuild all templates when content changes
       await buildAll();
+    } else if (filePath.endsWith('index.html') || filePath.endsWith('cv.html')) {
+      // Copy HTML files when they change
+      await copyRootHtmlFiles();
     }
   });
 }
