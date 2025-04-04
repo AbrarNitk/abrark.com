@@ -1,0 +1,259 @@
+{
+  "page_title": "Learning Courses",
+  "current_year": "2024",
+  "content_file": "web-development-courses.md",
+  "sections": [
+    {
+      "link": {
+        "url": "/",
+        "text": "Home"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses",
+        "text": "Courses"
+      },
+      "is_selected": true
+    },
+    {
+      "link": {
+        "url": "/projects",
+        "text": "Projects"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/blog",
+        "text": "Blog"
+      },
+      "is_selected": false
+    }
+  ],
+  "breadcrumb": {
+    "parent": "Home",
+    "current": "Courses"
+  },
+  "subsections": [
+    {
+      "link": {
+        "url": "/courses/all",
+        "text": "All Courses"
+      },
+      "is_selected": true
+    },
+    {
+      "link": {
+        "url": "/courses/featured",
+        "text": "Featured"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses/popular",
+        "text": "Popular"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses/new",
+        "text": "New Releases"
+      },
+      "is_selected": false
+    }
+  ],
+  "categories": [
+    {
+      "link": {
+        "url": "/courses/web-development",
+        "text": "Web Development"
+      },
+      "icon": "fas fa-globe",
+      "is_selected": true,
+      "subcategories": [
+        {
+          "link": {
+            "url": "/courses/web-development/frontend",
+            "text": "Frontend"
+          },
+          "is_selected": true
+        },
+        {
+          "link": {
+            "url": "/courses/web-development/backend",
+            "text": "Backend"
+          },
+          "is_selected": false
+        },
+        {
+          "link": {
+            "url": "/courses/web-development/fullstack",
+            "text": "Full Stack"
+          },
+          "is_selected": false
+        }
+      ]
+    },
+    {
+      "link": {
+        "url": "/courses/data-science",
+        "text": "Data Science"
+      },
+      "icon": "fas fa-chart-bar",
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses/mobile-development",
+        "text": "Mobile Development"
+      },
+      "icon": "fas fa-mobile-alt",
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses/cloud-computing",
+        "text": "Cloud Computing"
+      },
+      "icon": "fas fa-cloud",
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses/devops",
+        "text": "DevOps"
+      },
+      "icon": "fas fa-server",
+      "is_selected": false
+    }
+  ],
+  "skill_levels": [
+    {
+      "id": "beginner",
+      "label": "Beginner",
+      "selected": true
+    },
+    {
+      "id": "intermediate",
+      "label": "Intermediate",
+      "selected": true
+    },
+    {
+      "id": "advanced",
+      "label": "Advanced",
+      "selected": false
+    }
+  ],
+  "featured_course": {
+    "title": "Modern Frontend Development with React & TypeScript",
+    "description": "Build production-ready web applications using React, TypeScript, and modern frontend best practices. Learn component design, state management, hooks, and how to create responsive interfaces.",
+    "image": "/images/courses/react-typescript.jpg",
+    "badge": "Featured",
+    "link": {
+      "url": "/courses/web-development/frontend/react-typescript"
+    },
+    "author": {
+      "name": "Abrar Khan",
+      "image": "/images/authors/abrar.jpg"
+    },
+    "duration": "30 hours"
+  },
+  "courses": [
+    {
+      "title": "JavaScript Fundamentals",
+      "description": "Master the core concepts of JavaScript. Learn variables, functions, objects, arrays, and how the JavaScript engine works behind the scenes.",
+      "image": "/images/courses/javascript.jpg",
+      "level": "Beginner",
+      "duration": "12 hours",
+      "rating": "4.8",
+      "link": {
+        "url": "/courses/web-development/frontend/javascript-fundamentals"
+      }
+    },
+    {
+      "title": "CSS Layouts & Animations",
+      "description": "Take your CSS skills to the next level. Learn Flexbox, Grid, animations, transitions, and responsive design techniques.",
+      "image": "/images/courses/css.jpg",
+      "level": "Intermediate",
+      "duration": "8 hours",
+      "rating": "4.6",
+      "link": {
+        "url": "/courses/web-development/frontend/css-layouts"
+      }
+    },
+    {
+      "title": "Node.js API Development",
+      "description": "Build scalable backend APIs with Node.js and Express. Learn RESTful API design, authentication, database integration, and more.",
+      "image": "/images/courses/nodejs.jpg",
+      "level": "Intermediate",
+      "duration": "15 hours",
+      "rating": "4.9",
+      "link": {
+        "url": "/courses/web-development/backend/nodejs-api"
+      }
+    },
+    {
+      "title": "TypeScript for JavaScript Developers",
+      "description": "Add static typing to your JavaScript with TypeScript. Learn interfaces, generics, type narrowing, and integration with popular frameworks.",
+      "image": "/images/courses/typescript.jpg",
+      "level": "Intermediate",
+      "duration": "10 hours",
+      "rating": "4.7",
+      "link": {
+        "url": "/courses/web-development/frontend/typescript"
+      }
+    },
+    {
+      "title": "Responsive Web Design",
+      "description": "Create websites that look great on any device. Master media queries, fluid layouts, and mobile-first design principles.",
+      "image": "/images/courses/responsive.jpg",
+      "level": "Beginner",
+      "duration": "6 hours",
+      "rating": "4.5",
+      "link": {
+        "url": "/courses/web-development/frontend/responsive-design"
+      }
+    },
+    {
+      "title": "Advanced React Patterns",
+      "description": "Take your React skills to the expert level. Learn compound components, render props, hooks, context, and performance optimization.",
+      "image": "/images/courses/advanced-react.jpg",
+      "level": "Advanced",
+      "duration": "18 hours",
+      "rating": "4.9",
+      "link": {
+        "url": "/courses/web-development/frontend/advanced-react"
+      }
+    }
+  ],
+  "pagination": {
+    "prev": "/courses?page=1",
+    "next": "/courses?page=3",
+    "pages": [
+      {
+        "num": 1,
+        "link": "/courses?page=1",
+        "current": false
+      },
+      {
+        "num": 2,
+        "link": "/courses?page=2",
+        "current": true
+      },
+      {
+        "num": 3,
+        "link": "/courses?page=3",
+        "current": false
+      },
+      {
+        "num": 4,
+        "link": "/courses?page=4",
+        "current": false
+      }
+    ]
+  }
+} 

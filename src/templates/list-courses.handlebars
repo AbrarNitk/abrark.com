@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Courses</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .course-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/main.js"></script>
+</head>
+
+<body class="leading-relaxed bg-primary text-gray-300 font-sans dark:bg-primary-dark dark:text-gray-800 transition-colors duration-300">
+
+<header class="bg-primary px-8 py-4 flex items-center justify-between dark:bg-primary-dark transition-colors duration-300">
+    <div class="flex items-center space-x-8">
+        <a href="https://www.abrark.com" class="text-accent dark:text-accent-dark font-bold text-xl">
+            AK
+        </a>
+        <nav class="flex items-center space-x-4">
+            <!-- Sections -->
+            {{#each sections}}
+                {{#if this.is_selected}}
+                    <a href="{{this.link.url}}" class="text-accent dark:text-accent-dark">{{this.link.text}}</a>
+                {{else}}
+                    <a href="{{this.link.url}}" class="text-gray-300 hover:text-accent dark:text-gray-800 dark:hover:text-accent-dark">{{this.link.text}}</a>
+                {{/if}}
+            {{/each}}
+        </nav>
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <a href="https://www.github.com/AbrarNitk" class="text-gray-300 hover:text-accent dark:text-gray-800 dark:hover:text-accent-dark"><i class="fab fa-github"></i></a>
+        <div class="relative">
+            <input
+                type="text"
+                placeholder="Search"
+                class="bg-secondary text-gray-200 dark:bg-secondary-dark dark:text-gray-800 pl-8 pr-2 py-1 rounded focus:outline-none"
+            />
+            <i class="fa fa-search text-gray-400 dark:text-gray-600 absolute top-2 left-2"></i>
+        </div>
+        <button id="theme-toggle" class="p-1 rounded-full bg-secondary dark:bg-secondary-dark">
+            <i id="theme-icon" class="fa fa-sun text-accent dark:text-accent-dark"></i>
+        </button>
+        <a href="#" class="text-gray-300 hover:text-accent dark:text-gray-800 dark:hover:text-accent-dark"><i class="fa-regular fa-bell"></i></a>
+    </div>
+</header>
+
+<!-- Main Content Area -->
+<main class="p-6 bg-primary dark:bg-primary-dark transition-colors duration-300">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-2xl font-bold text-accent dark:text-accent-dark mb-10 text-center">{{page_title}}</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+            {{#each items}}
+            <a href="{{this.link.url}}" class="block mb-10">
+                <div class="course-card h-full bg-secondary dark:bg-secondary-dark rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="p-8">
+                        <h3 class="text-lg font-semibold text-accent dark:text-accent-dark mb-4">{{this.title}}</h3>
+                        <p class="text-gray-400 dark:text-gray-600 text-sm">{{this.description}}</p>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </div>
+</main>
+
+<script>
+    // Enable hover effects for course cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const courseCards = document.querySelectorAll('.course-card');
+        courseCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('shadow-xl');
+            });
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('shadow-xl');
+            });
+        });
+    });
+</script>
+</body>
+</html> 

@@ -1,0 +1,78 @@
+{
+  "page_title": "Learning Resources",
+  "content_file": "web-development-courses.md",
+  "sections": [
+    {
+      "link": {
+        "url": "/",
+        "text": "Home"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses",
+        "text": "Courses"
+      },
+      "is_selected": true
+    },
+    {
+      "link": {
+        "url": "/projects",
+        "text": "Projects"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/blog",
+        "text": "Blog"
+      },
+      "is_selected": false
+    }
+  ],
+  "items": [
+    {
+      "title": "JavaScript Fundamentals",
+      "description": "Master the core concepts of JavaScript. Learn variables, functions, objects, arrays, and how the JavaScript engine works behind the scenes.",
+      "link": {
+        "url": "/courses/web-development/frontend/javascript-fundamentals"
+      }
+    },
+    {
+      "title": "CSS Layouts & Animations",
+      "description": "Take your CSS skills to the next level. Learn Flexbox, Grid, animations, transitions, and responsive design techniques.",
+      "link": {
+        "url": "/courses/web-development/frontend/css-layouts"
+      }
+    },
+    {
+      "title": "Node.js API Development",
+      "description": "Build scalable backend APIs with Node.js and Express. Learn RESTful API design, authentication, database integration, and more.",
+      "link": {
+        "url": "/courses/web-development/backend/nodejs-api"
+      }
+    },
+    {
+      "title": "TypeScript for JavaScript Developers",
+      "description": "Add static typing to your JavaScript with TypeScript. Learn interfaces, generics, type narrowing, and integration with popular frameworks.",
+      "link": {
+        "url": "/courses/web-development/frontend/typescript"
+      }
+    },
+    {
+      "title": "Responsive Web Design",
+      "description": "Create websites that look great on any device. Master media queries, fluid layouts, and mobile-first design principles.",
+      "link": {
+        "url": "/courses/web-development/frontend/responsive-design"
+      }
+    },
+    {
+      "title": "Advanced React Patterns",
+      "description": "Take your React skills to the expert level. Learn compound components, render props, hooks, context, and performance optimization.",
+      "link": {
+        "url": "/courses/web-development/frontend/advanced-react"
+      }
+    }
+  ]
+} 

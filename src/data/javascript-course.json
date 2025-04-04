@@ -1,0 +1,120 @@
+{
+  "sections": [
+    {
+      "link": {
+        "url": "/",
+        "text": "Home"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses",
+        "text": "Courses"
+      },
+      "is_selected": true
+    },
+    {
+      "link": {
+        "url": "/projects",
+        "text": "Projects"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/blog",
+        "text": "Blog"
+      },
+      "is_selected": false
+    }
+  ],
+  "subsections": [
+    {
+      "link": {
+        "url": "/courses/all",
+        "text": "All Courses"
+      },
+      "is_selected": false
+    },
+    {
+      "link": {
+        "url": "/courses/web-development",
+        "text": "Web Development"
+      },
+      "is_selected": true
+    },
+    {
+      "link": {
+        "url": "/courses/data-science",
+        "text": "Data Science"
+      },
+      "is_selected": false
+    }
+  ],
+  "toc": {
+    "items": [
+      {
+        "link": {
+          "url": "/courses/web-development/frontend",
+          "text": "Frontend Development"
+        },
+        "is_selected": true,
+        "sub_toc": [
+          {
+            "link": {
+              "url": "/courses/web-development/frontend/html",
+              "text": "HTML Basics"
+            },
+            "is_selected": false
+          },
+          {
+            "link": {
+              "url": "/courses/web-development/frontend/css",
+              "text": "CSS Fundamentals"
+            },
+            "is_selected": false
+          },
+          {
+            "link": {
+              "url": "/courses/web-development/frontend/javascript",
+              "text": "JavaScript Fundamentals"
+            },
+            "is_selected": true
+          },
+          {
+            "link": {
+              "url": "/courses/web-development/frontend/react",
+              "text": "React"
+            },
+            "is_selected": false
+          }
+        ]
+      },
+      {
+        "link": {
+          "url": "/courses/web-development/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false,
+        "sub_toc": [
+          {
+            "link": {
+              "url": "/courses/web-development/backend/nodejs",
+              "text": "Node.js"
+            },
+            "is_selected": false
+          },
+          {
+            "link": {
+              "url": "/courses/web-development/backend/python",
+              "text": "Python"
+            },
+            "is_selected": false
+          }
+        ]
+      }
+    ]
+  },
+  "content_file": "javascript-course.md"
+} 
