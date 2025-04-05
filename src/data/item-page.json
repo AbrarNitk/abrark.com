@@ -59,53 +59,70 @@
           "url": "/learn/web-dev/frontend",
           "text": "Frontend Development"
         },
-        "is_selected": true,
-        "sub_toc": [
-          {
-            "link": {
-              "url": "/learn/web-dev/frontend/html",
-              "text": "HTML Basics"
-            },
-            "is_selected": true
-          },
-          {
-            "link": {
-              "url": "/learn/web-dev/frontend/css",
-              "text": "CSS Fundamentals"
-            },
-            "is_selected": false
-          },
-          {
-            "link": {
-              "url": "/learn/web-dev/frontend/javascript",
-              "text": "JavaScript Essentials"
-            },
-            "is_selected": false
-          }
-        ]
+        "is_selected": true
       },
       {
         "link": {
           "url": "/learn/web-dev/backend",
           "text": "Backend Development"
         },
-        "is_selected": false,
-        "sub_toc": [
-          {
-            "link": {
-              "url": "/learn/web-dev/backend/nodejs",
-              "text": "Node.js"
-            },
-            "is_selected": false
-          },
-          {
-            "link": {
-              "url": "/learn/web-dev/backend/python",
-              "text": "Python"
-            },
-            "is_selected": false
-          }
-        ]
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
+      },
+      {
+        "link": {
+          "url": "/learn/web-dev/backend",
+          "text": "Backend Development"
+        },
+        "is_selected": false
       }
     ]
   },
