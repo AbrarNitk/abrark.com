@@ -108,11 +108,11 @@
         .dark .nav-item::after {
             background: linear-gradient(90deg, #38BDF8, #C4B5FD, #F472B6);
         }
-        .nav-item:hover::after {
+        .nav-item:hover:not(.active)::after {
             transform: scaleX(1);
         }
         .nav-item.active::after {
-            transform: scaleX(1);
+            display: none;
         }
         /* Search overlay styling */
         .search-overlay {
@@ -222,13 +222,12 @@
         }
         /* Nav item styling */
         .nav-item.active {
-            border-bottom-width: 2px;
-            border-color: #D97706;
+            border-bottom: 2px solid #D97706;
             padding-bottom: 0.25rem;
         }
         
         .dark .nav-item.active {
-            border-color: #38BDF8;
+            border-bottom-color: #38BDF8;
         }
     </style>
     <link rel="stylesheet" href="/css/styles.css">
@@ -249,9 +248,9 @@
             <!-- Sections -->
             {{#each sections}}
                 {{#if this.is_selected}}
-                    <a href="{{this.link.url}}" class="nav-item active text-amber-700 dark:text-blue-300">{{this.link.text}}</a>
+                    <a href="{{this.path}}" class="nav-item active text-amber-700 dark:text-blue-300">{{this.link.text}}</a>
                 {{else}}
-                    <a href="{{this.link.url}}" class="nav-item text-amber-800 hover:text-amber-600 dark:text-gray-300 dark:hover:text-blue-300 transition-all duration-200">{{this.link.text}}</a>
+                    <a href="{{this.path}}" class="nav-item text-amber-800 hover:text-amber-600 dark:text-gray-300 dark:hover:text-blue-300 transition-all duration-200">{{this.link.text}}</a>
                 {{/if}}
             {{/each}}
         </nav>

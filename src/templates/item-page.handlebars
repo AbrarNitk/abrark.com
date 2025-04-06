@@ -62,11 +62,11 @@
         .dark .nav-item::after {
             background: linear-gradient(90deg, #38BDF8, #C4B5FD, #F472B6);
         }
-        .nav-item:hover::after {
+        .nav-item:hover:not(.active)::after {
             transform: scaleX(1);
         }
         .nav-item.active::after {
-            transform: scaleX(1);
+            display: none;
         }
         .sidebar-item {
             border-radius: 4px;
@@ -429,13 +429,12 @@
         
         /* Fix the line under section and subsection */
         .nav-item.active {
-            border-bottom-width: 2px;
-            border-color: #D97706;
+            border-bottom: 2px solid #D97706;
             padding-bottom: 0.25rem;
         }
         
         .dark .nav-item.active {
-            border-color: #38BDF8;
+            border-bottom-color: #38BDF8;
         }
         
         @media (max-width: 768px) {
