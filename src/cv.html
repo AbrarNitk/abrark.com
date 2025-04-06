@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abrar Khan - CV</title>
-    <link href="./output.css" rel="stylesheet">
+    <link href="./cv-style.css" rel="stylesheet">
     <link href="./css/styles.css" rel="stylesheet">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -156,6 +156,7 @@
         html.dark a.text-blue-600 {
             color: #93c5fd;
         }
+        /* Light mode styles - fixed to ensure proper contrast */
         html.light {
             color-scheme: light;
         }
@@ -163,23 +164,71 @@
             background-color: #ffffff;
             color: #1e293b;
         }
+        html.light .text-gray-600 {
+            color: #4b5563;
+        }
+        html.light .header-bg a {
+            color: #1e293b;
+        }
+        html.light .header-bg a:hover {
+            color: #3b82f6;
+        }
+        html.light .header-bg a.text-blue-400 {
+            color: #3b82f6;
+            border-color: #3b82f6;
+        }
+        html.light #theme-toggle {
+            background-color: #e5e7eb;
+            color: #4b5563;
+        }
+        html.light #theme-toggle:hover {
+            background-color: #dbeafe;
+            color: #3b82f6;
+        }
+        html.light .bg-gray-50 {
+            background-color: #f9fafb;
+        }
+        html.light .bg-gray-50 h3 {
+            color: #1e293b;
+        }
+        /* Additional fixes for light mode */
+        html.light .text-gray-200 {
+            color: #374151;
+        }
+        html.light p strong {
+            color: #111827;
+        }
+        html.light .company-blue,
+        html.light .company-purple,
+        html.light .company-pink,
+        html.light .company-green,
+        html.light .company-amber {
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+        }
+        /* Fix initial page load */
+        body {
+            background-color: #0f172a;
+        }
+        html.light body {
+            background-color: #ffffff;
+        }
     </style>
 </head>
-<body class="transition-colors duration-300 dark">
+<body class="transition-colors duration-300">
     <!-- Header Section -->
-    <header class="header-bg py-2 sm:py-4 px-3 sm:px-6 shadow-md">
+    <header class="header-bg py-2 sm:py-4 px-3 sm:px-6 shadow-md transition-colors duration-300">
         <div class="container mx-auto max-w-6xl">
             <!-- Main navigation bar - responsive layout -->
             <div class="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
                 <!-- Left section - Logo and navigation -->
                 <div class="flex items-center justify-center w-full md:w-auto space-x-3 sm:space-x-4 md:space-x-8">
-                    <a href="https://www.abrark.com" class="flex items-center text-gray-200 hover:text-blue-300 text-base sm:text-lg">
+                    <a href="https://www.abrark.com" class="flex items-center text-gray-200 hover:text-blue-300 text-base sm:text-lg transition-colors duration-300">
                         <i class="fas fa-home mr-1"></i>
                         <span>Home</span>
                     </a>
-                    <a href="/blog" class="text-gray-200 hover:text-blue-300 text-base sm:text-lg">Blog</a>
-                    <a href="/cv" class="text-blue-400 border-b-2 border-blue-400 text-base sm:text-lg">CV</a>
-                    <a href="/courses" class="text-gray-200 hover:text-blue-300 text-base sm:text-lg">Courses</a>
+                    <a href="/learning/" class="text-gray-200 hover:text-blue-300 text-base sm:text-lg transition-colors duration-300">Learning</a>
+                    <a href="/projects/" class="text-gray-200 text-base sm:text-lg transition-colors duration-300">Projects</a>
+                    <a href="/resume/" class="text-blue-400 border-b-2 border-blue-400 text-base sm:text-lg transition-colors duration-300">Resume</a>
                 </div>
                 
                 <!-- Center section - Name -->
@@ -190,13 +239,13 @@
                 
                 <!-- Right section - Social links and theme toggle -->
                 <div class="flex items-center justify-center w-full md:w-auto space-x-4 sm:space-x-6 md:space-x-8">
-                    <a href="https://www.linkedin.com/in/abrar-khan-815305100/" class="text-gray-200 hover:text-blue-300">
+                    <a href="https://www.linkedin.com/in/abrar-khan-815305100/" class="text-gray-200 hover:text-blue-300 transition-colors duration-300">
                         <i class="fab fa-linkedin text-xl sm:text-2xl"></i>
                     </a>
-                    <a href="https://github.com/AbrarNitk" class="text-gray-200 hover:text-blue-300">
+                    <a href="https://github.com/AbrarNitk" class="text-gray-200 hover:text-blue-300 transition-colors duration-300">
                         <i class="fab fa-github text-xl sm:text-2xl"></i>
                     </a>
-                    <a href="https://x.com/abrark_asahi" class="text-gray-200 hover:text-blue-300">
+                    <a href="https://x.com/abrark_asahi" class="text-gray-200 hover:text-blue-300 transition-colors duration-300">
                         <i class="fab fa-twitter text-xl sm:text-2xl"></i>
                     </a>
                     <button id="theme-toggle" class="p-2 rounded-full bg-gray-800 hover:bg-blue-600 text-white transition-colors duration-300">
@@ -392,29 +441,39 @@
     </div>
 
     <script>
+        // Add this script to set the theme class before the page content loads
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light');
+                document.documentElement.classList.remove('dark');
+            } else if (savedTheme === 'dark' || prefersDark) {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+            } else {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+
         document.addEventListener('DOMContentLoaded', function() {
             const themeToggle = document.getElementById('theme-toggle');
             const themeIcon = document.getElementById('theme-icon');
             
-            // Check for saved theme preference or use system preference
-            const savedTheme = localStorage.getItem('theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            // Apply saved theme or system preference
-            if (savedTheme === 'light') {
-                document.documentElement.classList.remove('dark');
-                document.documentElement.classList.add('light');
+            // Update icon based on current theme
+            if (document.documentElement.classList.contains('light')) {
                 themeIcon.classList.add('fa-sun');
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('text-yellow-500');
                 themeIcon.classList.remove('text-blue-300');
+                document.body.classList.remove('dark');
             } else {
-                document.documentElement.classList.add('dark');
-                document.documentElement.classList.remove('light');
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
                 themeIcon.classList.remove('text-yellow-500');
                 themeIcon.classList.add('text-blue-300');
+                document.body.classList.add('dark');
             }
             
             // Toggle theme
@@ -424,6 +483,7 @@
                 if (isDark) {
                     document.documentElement.classList.remove('dark');
                     document.documentElement.classList.add('light');
+                    document.body.classList.remove('dark');
                     localStorage.setItem('theme', 'light');
                     themeIcon.classList.add('fa-sun');
                     themeIcon.classList.remove('fa-moon');
@@ -432,6 +492,7 @@
                 } else {
                     document.documentElement.classList.add('dark');
                     document.documentElement.classList.remove('light');
+                    document.body.classList.add('dark');
                     localStorage.setItem('theme', 'dark');
                     themeIcon.classList.remove('fa-sun');
                     themeIcon.classList.add('fa-moon');

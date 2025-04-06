@@ -4,11 +4,13 @@
   "description": "Static HTML site with Tailwind CSS",
   "scripts": {
     "build:css": "tailwindcss -i ./src/input.css -o ./src/static/css/styles.css --minify",
+    "build:cv": "node scripts/build-cv-css.js && node scripts/build-cv-page.js",
     "build:pages": "node scripts/build-pages.js",
-    "build": "npm run build:css && npm run build:pages",
+    "build": "npm run build:css && npm run build:cv-css && npm run build:pages && npm run build:cv",
     "dev:css": "tailwindcss -i ./src/input.css -o ./src/static/css/styles.css --watch",
+    "dev:cv-css": "npx tailwindcss -i ./src/input.css -o ./dist/cv-style.css --watch",
     "dev:pages": "node scripts/build-pages.js --watch",
-    "dev": "concurrently \"npm run dev:css\" \"npm run dev:pages\""
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:cv-css\" \"npm run dev:pages\""
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
