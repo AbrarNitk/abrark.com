@@ -15,7 +15,7 @@
         }
         /* Enhanced background patterns */
         body {
-            background-image: radial-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(148, 163, 184, 0.07) 1px, rgba(250, 250, 245, 1) 1px);
             background-size: 20px 20px;
         }
         .dark body {
@@ -23,7 +23,7 @@
             background-size: 20px 20px;
         }
         .gradient-text {
-            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+            background: linear-gradient(90deg, #D97706, #B45309, #7C2D12);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -35,8 +35,8 @@
             background-clip: text;
         }
         .header-gradient {
-            background: linear-gradient(180deg, rgba(239, 246, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+            background: linear-gradient(180deg, rgba(250, 250, 245, 0.95) 0%, rgba(252, 252, 249, 0.9) 100%);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
             backdrop-filter: blur(10px);
         }
         .dark .header-gradient {
@@ -54,7 +54,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+            background: linear-gradient(90deg, #D97706, #B45309, #7C2D12);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.3s ease;
@@ -69,24 +69,32 @@
             transform: scaleX(1);
         }
         .sidebar-item {
-            border-left: 3px solid transparent;
-            transition: all 0.3s ease;
+            border-radius: 4px;
+            padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+            transition: all 0.2s ease;
+            margin-bottom: 0.25rem;
+            line-height: 1.4;
+            display: block;
+            border-left: 2px solid transparent;
         }
         .sidebar-item:hover {
-            border-color: #3B82F6;
-            background-color: rgba(239, 246, 255, 0.5);
-        }
-        .dark .sidebar-item:hover {
-            border-color: #38BDF8;
-            background-color: rgba(30, 41, 59, 0.5);
+            background-color: rgba(217, 119, 6, 0.08);
+            transform: translateX(1px);
+            border-left-color: rgba(217, 119, 6, 0.3);
         }
         .sidebar-item.active {
-            border-color: #3B82F6;
-            background-color: rgba(239, 246, 255, 0.7);
+            background-color: rgba(217, 119, 6, 0.1);
+            transform: translateX(0);
+            border-left: 2px solid #D97706;
+            font-weight: 500;
+        }
+        .dark .sidebar-item:hover {
+            background-color: rgba(56, 189, 248, 0.06);
+            border-left-color: rgba(56, 189, 248, 0.3);
         }
         .dark .sidebar-item.active {
-            border-color: #38BDF8;
-            background-color: rgba(30, 41, 59, 0.7);
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left-color: #38BDF8;
         }
         
         /* Mobile sidebar styling */
@@ -100,8 +108,8 @@
                 max-width: 300px;
                 z-index: 50;
                 transition: left 0.3s ease;
-                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.15);
-                background: rgba(255, 255, 255, 0.95);
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.10);
+                background: rgba(254, 252, 232, 0.95);
                 backdrop-filter: blur(10px);
             }
             .dark .sidebar {
@@ -148,12 +156,12 @@
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
-                background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+                background: linear-gradient(135deg, #D97706, #B45309);
                 color: white;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.5);
+                box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
                 border: none;
                 transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             }
@@ -248,46 +256,11 @@
             font-size: 1.15rem;
             line-height: 1.5;
             letter-spacing: 0.01em;
-            color: #3B82F6;
-            font-weight: 600;
+            color: #B45309;
         }
 
         .dark .toc-title {
             color: #38BDF8;
-        }
-
-        /* Refined sidebar item styling */
-        .sidebar-item {
-            border-radius: 3px;
-            padding: 0.5rem 0.75rem;
-            transition: all 0.2s ease;
-            margin-bottom: 0.35rem;
-            line-height: 1.4;
-            display: block;
-            border-left: 2px solid transparent;
-        }
-
-        .sidebar-item:hover {
-            background-color: rgba(59, 130, 246, 0.06);
-            transform: translateX(1px);
-            border-left-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .sidebar-item.active {
-            background-color: rgba(59, 130, 246, 0.1);
-            transform: translateX(0);
-            border-left: 2px solid #3B82F6;
-            font-weight: 500;
-        }
-
-        .dark .sidebar-item:hover {
-            background-color: rgba(56, 189, 248, 0.06);
-            border-left-color: rgba(56, 189, 248, 0.3);
-        }
-
-        .dark .sidebar-item.active {
-            background-color: rgba(56, 189, 248, 0.1);
-            border-left-color: #38BDF8;
         }
 
         /* Improved TOC header styling */
@@ -305,7 +278,7 @@
             left: 0;
             width: 40%;
             height: 2px;
-            background: linear-gradient(90deg, #3B82F6, transparent);
+            background: linear-gradient(90deg, #D97706, transparent);
         }
 
         .dark .toc-header::after {
@@ -338,9 +311,9 @@
         }
         
         :root {
-            --bg-color: 255, 255, 255;
+            --bg-color: 250, 250, 245;
             --bg-dark-color: 15, 23, 42;
-            --border-color: rgba(226, 232, 240, 1);
+            --border-color: rgba(253, 230, 138, 0.4);
             --border-dark-color: rgba(51, 65, 85, 1);
         }
         
@@ -457,7 +430,8 @@
         /* Fix the line under section and subsection */
         .nav-item.active {
             border-bottom-width: 2px;
-            border-color: #3B82F6;
+            border-color: #D97706;
+            padding-bottom: 0.25rem;
         }
         
         .dark .nav-item.active {
@@ -479,16 +453,16 @@
 <body class="leading-relaxed bg-background-DEFAULT text-text-DEFAULT font-sans dark:bg-background-dark dark:text-text-dark transition-colors duration-300">
 
 <!-- Main fixed header -->
-<header class="bg-background-DEFAULT border-b border-border-DEFAULT px-4 sm:px-8 py-4 flex items-center justify-between dark:bg-background-dark dark:border-border-dark transition-colors duration-300 sticky top-0 z-50 header-gradient backdrop-blur-sm">
+<header class="bg-amber-50 border-b border-amber-100/70 px-4 sm:px-8 py-4 flex items-center justify-between dark:bg-background-dark dark:border-border-dark transition-colors duration-300 sticky top-0 z-50 header-gradient backdrop-blur-sm">
     <div class="flex items-center">
         <a href="https://www.abrark.com" class="gradient-text font-bold text-xl mr-4">
             AK
         </a>
         <!-- Main navigation - visible on all screens -->
         <nav class="flex items-center space-x-2 sm:space-x-4">
-            <a href="#" class="nav-item text-sm sm:text-base text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Projects</a>
-            <a href="#" class="nav-item text-sm sm:text-base text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Blogs</a>
-            <a href="#" class="nav-item text-sm sm:text-base text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Resume</a>
+            <a href="#" class="nav-item text-sm sm:text-base text-amber-800 hover:text-amber-600 dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Projects</a>
+            <a href="#" class="nav-item text-sm sm:text-base text-amber-800 hover:text-amber-600 dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Blogs</a>
+            <a href="#" class="nav-item text-sm sm:text-base text-amber-800 hover:text-amber-600 dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Resume</a>
         </nav>
     </div>
 
@@ -497,9 +471,9 @@
         <nav class="flex items-center space-x-3 mr-6">
             {{#each sections}}
                 {{#if this.is_selected}}
-                    <a href="{{this.link.url}}" class="nav-item active text-primary-DEFAULT dark:text-primary-dark font-medium">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="nav-item active text-amber-700 dark:text-blue-300 font-medium">{{this.link.text}}</a>
                 {{else}}
-                    <a href="{{this.link.url}}" class="nav-item text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="nav-item text-amber-800 hover:text-amber-600 dark:text-gray-300 dark:hover:text-blue-300 transition-all duration-200">{{this.link.text}}</a>
                 {{/if}}
             {{/each}}
         </nav>
@@ -509,39 +483,39 @@
             <input
                 type="text"
                 placeholder="Search"
-                class="bg-background-secondary text-text-DEFAULT dark:bg-background-darkSecondary dark:text-text-dark pl-8 pr-2 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-DEFAULT dark:focus:ring-primary-dark border border-border-DEFAULT dark:border-border-dark transition duration-200"
+                class="bg-amber-50/80 text-amber-900 dark:bg-background-darkSecondary dark:text-gray-200 pl-8 pr-2 py-1.5 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-blue-500 border border-amber-200 dark:border-border-dark transition duration-200"
             />
-            <i class="fa fa-search text-text-DEFAULT opacity-60 dark:text-text-dark absolute top-2 left-2.5"></i>
+            <i class="fa fa-search text-amber-700 opacity-60 dark:text-blue-300 absolute top-2 left-2.5"></i>
         </div>
     </div>
 
     <!-- Mobile utility buttons -->
     <div class="flex items-center space-x-1 sm:space-x-2">
-        <a href="https://www.github.com/AbrarNitk" class="btn-icon p-2 text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark">
+        <a href="https://www.github.com/AbrarNitk" class="btn-icon p-2 text-amber-800 hover:text-amber-600 dark:text-blue-300 dark:hover:text-blue-200">
             <i class="fab fa-github text-sm sm:text-base"></i>
         </a>
-        <button id="search-toggle" class="search-toggle md:hidden btn-icon p-2">
+        <button id="search-toggle" class="search-toggle md:hidden btn-icon p-2 text-amber-700 dark:text-blue-300">
             <i class="fas fa-search text-sm sm:text-base"></i>
         </button>
-        <button id="theme-toggle" class="btn-icon p-2">
-            <i id="theme-icon" class="fa fa-sun text-sm sm:text-base text-accent-DEFAULT dark:text-accent-dark"></i>
+        <button id="theme-toggle" class="btn-icon p-2 text-amber-700 dark:text-blue-300">
+            <i id="theme-icon" class="fa fa-sun text-sm sm:text-base text-amber-600 dark:text-yellow-300"></i>
         </button>
-        <button id="mobile-menu-toggle" class="md:hidden btn-icon p-2">
+        <button id="mobile-menu-toggle" class="md:hidden btn-icon p-2 text-amber-700 dark:text-blue-300">
             <i class="fas fa-bars text-sm sm:text-base"></i>
         </button>
     </div>
 </header>
 
 <!-- Scrollable section and subsection navigation -->
-<div class="bg-background-DEFAULT dark:bg-background-dark transition-colors duration-300 md:overflow-visible overflow-x-auto">
+<div class="bg-amber-50 dark:bg-background-dark transition-colors duration-300 md:overflow-visible overflow-x-auto">
     <!-- Section links on mobile - second row -->
     <div class="md:hidden pt-2 px-4 sm:px-8">
         <div class="flex justify-end min-w-max">
             {{#each sections}}
                 {{#if this.is_selected}}
-                    <a href="{{this.link.url}}" class="nav-item active text-primary-DEFAULT dark:text-primary-dark font-medium ml-4 border-b-2 border-primary-DEFAULT dark:border-primary-dark pb-1">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="nav-item active text-amber-700 dark:text-blue-300 font-medium ml-4">{{this.link.text}}</a>
                 {{else}}
-                    <a href="{{this.link.url}}" class="nav-item text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200 ml-4 hover:border-b-2 hover:border-primary-DEFAULT dark:hover:border-primary-dark pb-1">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="nav-item text-amber-800 hover:text-amber-600 dark:text-gray-300 dark:hover:text-blue-300 transition-all duration-200 ml-4">{{this.link.text}}</a>
                 {{/if}}
             {{/each}}
         </div>
@@ -552,9 +526,9 @@
         <div class="flex md:flex-wrap justify-end min-w-max md:min-w-0">
             {{#each subsections}}
                 {{#if this.is_selected}}
-                    <a href="{{this.link.url}}" class="nav-item active text-primary-DEFAULT dark:text-primary-dark font-medium ml-4 border-b-2 border-primary-DEFAULT dark:border-primary-dark pb-1">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="nav-item active text-amber-700 dark:text-blue-300 font-medium ml-4">{{this.link.text}}</a>
                 {{else}}
-                    <a href="{{this.link.url}}" class="nav-item text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200 ml-4 hover:border-b-2 hover:border-primary-DEFAULT dark:hover:border-primary-dark pb-1">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="nav-item text-amber-800 hover:text-amber-600 dark:text-gray-300 dark:hover:text-blue-300 transition-all duration-200 ml-4">{{this.link.text}}</a>
                 {{/if}}
             {{/each}}
         </div>
@@ -562,17 +536,17 @@
 </div>
 
 <!-- Mobile Search Overlay -->
-<div id="search-overlay" class="search-overlay bg-background-DEFAULT dark:bg-background-dark border-b border-border-DEFAULT dark:border-border-dark">
+<div id="search-overlay" class="search-overlay bg-amber-50 dark:bg-background-dark border-b border-amber-100/70 dark:border-border-dark">
     <div class="search-overlay-form">
         <div class="relative">
             <input
                 type="text"
                 id="mobile-search-input"
                 placeholder="Search..."
-                class="w-full bg-background-secondary text-text-DEFAULT dark:bg-background-darkSecondary dark:text-text-dark pl-10 pr-10 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary-DEFAULT dark:focus:ring-primary-dark border border-border-DEFAULT dark:border-border-dark"
+                class="w-full bg-amber-50/80 text-amber-900 dark:bg-background-darkSecondary dark:text-gray-200 pl-10 pr-10 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-500 dark:focus:ring-blue-500 border border-amber-200 dark:border-border-dark"
             />
-            <i class="fa fa-search text-text-DEFAULT opacity-60 dark:text-text-dark absolute top-3.5 left-3.5"></i>
-            <button id="close-search" class="absolute right-3 top-3 text-text-DEFAULT dark:text-text-dark btn-icon">
+            <i class="fa fa-search text-amber-700 opacity-60 dark:text-blue-300 absolute top-3.5 left-3.5"></i>
+            <button id="close-search" class="absolute right-3 top-3 text-amber-700 dark:text-blue-300 btn-icon">
                 <i class="fas fa-times"></i>
             </button>
         </div>
@@ -590,11 +564,11 @@
 <!-- Main container -->
 <div class="flex mx-auto">
     <!-- Sidebar for navigation -->
-    <aside id="sidebar" class="sidebar bg-background-DEFAULT border-r border-border-DEFAULT text-text-DEFAULT dark:bg-background-dark dark:border-border-dark dark:text-text-dark md:sticky top-0 h-screen p-6 pt-4 transition-colors duration-300">
+    <aside id="sidebar" class="sidebar bg-amber-50/80 border-r border-amber-100/70 text-text-DEFAULT dark:bg-background-dark dark:border-border-dark dark:text-gray-300 md:sticky top-0 h-screen p-6 pt-4 transition-colors duration-300">
         <div class="pt-5">
             <!-- Mobile close button -->
             <div class="flex justify-end items-center md:hidden mb-3">
-                <button id="close-sidebar" class="text-text-DEFAULT dark:text-text-dark btn-icon">
+                <button id="close-sidebar" class="text-amber-800 dark:text-blue-300 btn-icon">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -613,13 +587,13 @@
                     <div class="toc-section">
                         {{#if this.is_selected}}
                             <div class="sidebar-item active">
-                                <a href="{{this.link.url}}" class="text-primary-DEFAULT dark:text-primary-dark">
+                                <a href="{{this.link.url}}" class="text-amber-800 dark:text-blue-300">
                                     {{this.link.text}}
                                 </a>
                             </div>
                         {{else}}
                             <div class="sidebar-item">
-                                <a href="{{this.link.url}}" class="text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark">
+                                <a href="{{this.link.url}}" class="text-amber-800 hover:text-amber-600 dark:text-gray-300 dark:hover:text-blue-300">
                                     {{this.link.text}}
                                 </a>
                             </div>
@@ -631,7 +605,7 @@
     </aside>
 
     <!-- Main Content Area Starts -->
-    <main class="w-full p-4 md:p-6 lg:p-8 bg-background-DEFAULT dark:bg-background-dark overflow-y-auto no-scrollbar transition-colors duration-300">
+    <main class="w-full p-4 md:p-6 lg:p-8 bg-amber-50/30 dark:bg-background-dark overflow-y-auto no-scrollbar transition-colors duration-300">
         <article class="prose prose-invert dark:prose-dark max-w-full md:max-w-3xl mx-auto transition-colors duration-300 break-words">
             {{{ content }}}
         </article>
