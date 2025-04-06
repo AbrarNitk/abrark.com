@@ -246,12 +246,15 @@
         </a>
         <nav class="hidden md:flex items-center space-x-4 ml-8">
             <!-- Sections -->
-            {{#each sections}}
-                {{#if this.is_selected}}
+            {{#each headers}}
+                <a href="{{this.url}}" class="nav-item text-amber-800 hover:text-amber-600
+                    dark:text-gray-300 dark:hover:text-blue-300 transition-all duration-200">{{this.text}}</a>
+
+                {{!-- {{#if this.is_selected}}
                     <a href="{{this.path}}" class="nav-item active text-amber-700 dark:text-blue-300">{{this.link.text}}</a>
                 {{else}}
                     <a href="{{this.path}}" class="nav-item text-amber-800 hover:text-amber-600 dark:text-gray-300 dark:hover:text-blue-300 transition-all duration-200">{{this.link.text}}</a>
-                {{/if}}
+                {{/if}} --}}
             {{/each}}
         </nav>
     </div>
