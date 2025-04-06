@@ -167,6 +167,10 @@
             .search-toggle {
                 display: block;
             }
+            header {
+                max-width: 100%;
+                overflow-x: visible;
+            }
         }
         
         @media (min-width: 769px) {
@@ -239,161 +243,98 @@
             margin: 0 auto;
         }
 
-        /* Add styles for TOC header and content management */
+        /* Improved TOC styling */
+        .toc-title {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+            color: #3B82F6;
+            font-weight: 600;
+        }
+
+        .dark .toc-title {
+            color: #38BDF8;
+        }
+
+        /* Refined sidebar item styling */
+        .sidebar-item {
+            border-radius: 3px;
+            padding: 0.5rem 0.75rem;
+            transition: all 0.2s ease;
+            margin-bottom: 0.35rem;
+            line-height: 1.4;
+            display: block;
+            border-left: 2px solid transparent;
+        }
+
+        .sidebar-item:hover {
+            background-color: rgba(59, 130, 246, 0.06);
+            transform: translateX(1px);
+            border-left-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .sidebar-item.active {
+            background-color: rgba(59, 130, 246, 0.1);
+            transform: translateX(0);
+            border-left: 2px solid #3B82F6;
+            font-weight: 500;
+        }
+
+        .dark .sidebar-item:hover {
+            background-color: rgba(56, 189, 248, 0.06);
+            border-left-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .dark .sidebar-item.active {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left-color: #38BDF8;
+        }
+
+        /* Improved TOC header styling */
         .toc-header {
             border-bottom: 1px solid var(--border-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.25rem;
             padding-bottom: 0.75rem;
             position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: -0.5rem; /* Bring title closer to top */
         }
-        
-        .toc-header::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: 0;
-            width: 30%;
-            height: 8px;
-            background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), transparent);
-            opacity: 0.7;
-        }
-        
-        .dark .toc-header::before {
-            background: linear-gradient(90deg, rgba(56, 189, 248, 0.1), transparent);
-        }
-        
+
         .toc-header::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -1px;
             left: 0;
-            width: 100%;
+            width: 40%;
             height: 2px;
-            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
-            opacity: 0.6;
-            transform: translateY(1px);
+            background: linear-gradient(90deg, #3B82F6, transparent);
         }
-        
+
         .dark .toc-header::after {
-            background: linear-gradient(90deg, #38BDF8, #C4B5FD, #F472B6);
+            background: linear-gradient(90deg, #38BDF8, transparent);
         }
-        
-        .toc-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .toc-title-icon {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-        
-        /* Main TOC item styling */
-        .toc-section > .sidebar-item {
-            font-weight: 400;
-            border-left: 3px solid transparent;
-            font-size: 1.05rem;
-        }
-        
-        /* Adjust spacing to maintain rhythm */
-        .sidebar-item {
-            transition: all 0.2s ease;
-            margin-bottom: 0.30rem; /* Slightly reduced for more compact list */
-            padding-top: 0.35rem; /* Slightly reduced */
-            padding-bottom: 0.35rem; /* Slightly reduced */
-            border-radius: 0.25rem;
-        }
-        
-        /* Last item in the list shouldn't have margin bottom */
-        .toc-section:last-child .sidebar-item {
-            margin-bottom: 0;
-        }
-        
-        /* Remove any leftover ul styling */
-        .toc-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        /* Style for compact links */
-        .toc-content a {
-            line-height: 1.5; /* Increased line height for better readability */
-            display: block;
-            font-size: inherit; /* Inherit font size from parent */
-        }
-        
-        /* Base font size for TOC content */
+
+        /* Enhanced content spacing */
         .toc-content {
-            max-height: calc(100vh - 140px);
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
-            padding-right: 0.5rem;
-            margin-right: -0.5rem;
-            padding-top: 0.25rem;
-            font-size: 1rem;
+            padding-left: 0.25rem;
+            font-size: 0.95rem;
         }
-        
-        /* Adjust ul margins */
-        .toc-content ul {
-            margin-top: 0.25rem; /* Reduced space between parent item and sub-items */
-        }
-        
-        @media (max-width: 768px) {
-            .toc-content {
-                max-height: calc(100vh - 160px);
-            }
-            
-            .toc-title {
-                font-size: 1.2rem;
-            }
-        }
-        
-        .toc-content::-webkit-scrollbar {
-            width: 4px;
-        }
-        
-        .toc-content::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        
-        .toc-content::-webkit-scrollbar-thumb {
-            background-color: rgba(156, 163, 175, 0.5);
-            border-radius: 2px;
-        }
-        
-        .dark .toc-content::-webkit-scrollbar-thumb {
-            background-color: rgba(75, 85, 99, 0.5);
-        }
-        
+
+        /* Ensure consistent vertical rhythm */
         .toc-section {
-            margin: 0; /* Remove all margin */
-            padding: 0; /* Remove all padding */
+            margin: 0;
+            padding: 0;
         }
-        
-        .sidebar-item:hover {
-            transform: translateX(2px);
+
+        /* Title icon adjustment */
+        .toc-title-icon {
+            opacity: 0.9;
+            margin-right: 0.5rem;
         }
-        
-        .sidebar-item.active {
-            transform: translateX(2px);
-            font-weight: 500;
-        }
-        
-        /* Remove the subtle separator between sections */
-        .toc-section:not(:last-child)::after {
-            content: none;
-            display: none;
+
+        /* Hover effects for better interactivity */
+        .sidebar-item a {
+            color: inherit;
+            display: block;
+            width: 100%;
         }
         
         :root {
@@ -406,6 +347,128 @@
         .dark {
             --border-color: var(--border-dark-color);
         }
+
+        /* Ensure toc-content has proper scrolling with only one scrollbar */
+        .toc-content {
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+            padding-right: 0.5rem;
+            margin-right: -0.5rem;
+            padding-top: 0.25rem;
+            font-size: 1rem;
+        }
+
+        /* Remove the overflow from sidebar which causes double scrollbars */
+        .sidebar {
+            overflow-y: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .toc-content {
+                max-height: calc(100vh - 160px);
+            }
+        }
+
+        /* Responsive TOC width adjustments */
+        @media (min-width: 1600px) {
+            .sidebar {
+                width: 300px;
+            }
+        }
+        
+        @media (min-width: 1200px) and (max-width: 1599px) {
+            .sidebar {
+                width: 280px;
+            }
+        }
+        
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .sidebar {
+                width: 260px;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 991px) {
+            .sidebar {
+                width: 240px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .sidebar {
+                width: 85%;
+                max-width: 300px;
+            }
+        }
+        
+        /* Improve TOC styling */
+        .toc-content {
+            max-height: calc(100vh - 140px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+            padding-right: 0.5rem;
+            margin-right: -0.5rem;
+            padding-top: 0.25rem;
+            font-size: 1rem;
+        }
+
+        /* Remove the overflow from sidebar which causes double scrollbars */
+        .sidebar {
+            overflow-y: hidden;
+        }
+        
+        /* Improve sidebar and TOC item styling */
+        .sidebar-item {
+            border-radius: 4px;
+            padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+            transition: all 0.2s ease;
+            margin-bottom: 0.25rem;
+        }
+        
+        .sidebar-item:hover {
+            background-color: rgba(59, 130, 246, 0.08);
+            transform: translateX(2px);
+        }
+        
+        .sidebar-item.active {
+            background-color: rgba(59, 130, 246, 0.12);
+            transform: translateX(2px);
+            font-weight: 500;
+        }
+        
+        .dark .sidebar-item:hover {
+            background-color: rgba(56, 189, 248, 0.08);
+        }
+        
+        .dark .sidebar-item.active {
+            background-color: rgba(56, 189, 248, 0.12);
+        }
+        
+        /* Improve TOC title styling */
+        .toc-title {
+            font-size: 1.15rem;
+            line-height: 1.5;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Fix the line under section and subsection */
+        .nav-item.active {
+            border-bottom-width: 2px;
+            border-color: #3B82F6;
+        }
+        
+        .dark .nav-item.active {
+            border-color: #38BDF8;
+        }
+        
+        @media (max-width: 768px) {
+            .toc-content {
+                max-height: calc(100vh - 160px);
+            }
+        }
     </style>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/code-block.css">
@@ -415,27 +478,34 @@
 
 <body class="leading-relaxed bg-background-DEFAULT text-text-DEFAULT font-sans dark:bg-background-dark dark:text-text-dark transition-colors duration-300">
 
+<!-- Main fixed header -->
 <header class="bg-background-DEFAULT border-b border-border-DEFAULT px-4 sm:px-8 py-4 flex items-center justify-between dark:bg-background-dark dark:border-border-dark transition-colors duration-300 sticky top-0 z-50 header-gradient backdrop-blur-sm">
     <div class="flex items-center">
-        <a href="https://www.abrark.com" class="gradient-text font-bold text-xl">
-<!--   TODO:         {{site.title}}-->
-        AK
+        <a href="https://www.abrark.com" class="gradient-text font-bold text-xl mr-4">
+            AK
         </a>
-        <nav class="hidden md:flex items-center space-x-4 ml-8">
-            <!-- Sections -->
+        <!-- Main navigation - visible on all screens -->
+        <nav class="flex items-center space-x-2 sm:space-x-4">
+            <a href="#" class="nav-item text-sm sm:text-base text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Projects</a>
+            <a href="#" class="nav-item text-sm sm:text-base text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Blogs</a>
+            <a href="#" class="nav-item text-sm sm:text-base text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">Resume</a>
+        </nav>
+    </div>
+
+    <div class="hidden md:flex items-center flex-1 justify-end">
+        <!-- Section links on desktop - right aligned -->
+        <nav class="flex items-center space-x-3 mr-6">
             {{#each sections}}
                 {{#if this.is_selected}}
-                    <a href="{{this.link.url}}" class="nav-item active text-primary-DEFAULT dark:text-primary-dark">{{this.link.text}}</a>
+                    <a href="{{this.link.url}}" class="nav-item active text-primary-DEFAULT dark:text-primary-dark font-medium">{{this.link.text}}</a>
                 {{else}}
                     <a href="{{this.link.url}}" class="nav-item text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200">{{this.link.text}}</a>
                 {{/if}}
             {{/each}}
         </nav>
-    </div>
 
-    <div class="flex items-center space-x-2 md:space-x-4">
-        <a href="https://www.github.com/AbrarNitk" class="btn-icon text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transform hover:scale-110 transition-transform duration-200"><i class="fab fa-github"></i></a>
-        <div class="relative hidden md:block">
+        <!-- Search on desktop -->
+        <div class="relative">
             <input
                 type="text"
                 placeholder="Search"
@@ -443,17 +513,53 @@
             />
             <i class="fa fa-search text-text-DEFAULT opacity-60 dark:text-text-dark absolute top-2 left-2.5"></i>
         </div>
-        <button id="search-toggle" class="search-toggle md:hidden p-2 rounded-full bg-background-secondary dark:bg-background-darkSecondary border border-border-DEFAULT dark:border-border-dark text-text-DEFAULT dark:text-text-dark hover:text-primary-DEFAULT dark:hover:text-primary-dark btn-icon">
-            <i class="fas fa-search"></i>
+    </div>
+
+    <!-- Mobile utility buttons -->
+    <div class="flex items-center space-x-1 sm:space-x-2">
+        <a href="https://www.github.com/AbrarNitk" class="btn-icon p-2 text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark">
+            <i class="fab fa-github text-sm sm:text-base"></i>
+        </a>
+        <button id="search-toggle" class="search-toggle md:hidden btn-icon p-2">
+            <i class="fas fa-search text-sm sm:text-base"></i>
         </button>
-        <button id="theme-toggle" class="p-2 rounded-full bg-background-secondary dark:bg-background-darkSecondary border border-border-DEFAULT dark:border-border-dark hover:bg-primary-DEFAULT hover:text-white dark:hover:bg-primary-dark dark:hover:text-white transition-colors duration-200 btn-icon">
-            <i id="theme-icon" class="fa fa-sun text-accent-DEFAULT dark:text-accent-dark"></i>
+        <button id="theme-toggle" class="btn-icon p-2">
+            <i id="theme-icon" class="fa fa-sun text-sm sm:text-base text-accent-DEFAULT dark:text-accent-dark"></i>
         </button>
-        <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-full bg-background-secondary dark:bg-background-darkSecondary border border-border-DEFAULT dark:border-border-dark text-text-DEFAULT dark:text-text-dark hover:text-primary-DEFAULT dark:hover:text-primary-dark btn-icon">
-            <i class="fas fa-bars"></i>
+        <button id="mobile-menu-toggle" class="md:hidden btn-icon p-2">
+            <i class="fas fa-bars text-sm sm:text-base"></i>
         </button>
     </div>
 </header>
+
+<!-- Scrollable section and subsection navigation -->
+<div class="bg-background-DEFAULT dark:bg-background-dark transition-colors duration-300 md:overflow-visible overflow-x-auto">
+    <!-- Section links on mobile - second row -->
+    <div class="md:hidden pt-2 px-4 sm:px-8">
+        <div class="flex justify-end min-w-max">
+            {{#each sections}}
+                {{#if this.is_selected}}
+                    <a href="{{this.link.url}}" class="nav-item active text-primary-DEFAULT dark:text-primary-dark font-medium ml-4 border-b-2 border-primary-DEFAULT dark:border-primary-dark pb-1">{{this.link.text}}</a>
+                {{else}}
+                    <a href="{{this.link.url}}" class="nav-item text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200 ml-4 hover:border-b-2 hover:border-primary-DEFAULT dark:hover:border-primary-dark pb-1">{{this.link.text}}</a>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Subsection links - third row -->
+    <div class="pt-3 pb-2 px-4 sm:px-8">
+        <div class="flex md:flex-wrap justify-end min-w-max md:min-w-0">
+            {{#each subsections}}
+                {{#if this.is_selected}}
+                    <a href="{{this.link.url}}" class="nav-item active text-primary-DEFAULT dark:text-primary-dark font-medium ml-4 border-b-2 border-primary-DEFAULT dark:border-primary-dark pb-1">{{this.link.text}}</a>
+                {{else}}
+                    <a href="{{this.link.url}}" class="nav-item text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-all duration-200 ml-4 hover:border-b-2 hover:border-primary-DEFAULT dark:hover:border-primary-dark pb-1">{{this.link.text}}</a>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
 
 <!-- Mobile Search Overlay -->
 <div id="search-overlay" class="search-overlay bg-background-DEFAULT dark:bg-background-dark border-b border-border-DEFAULT dark:border-border-dark">
@@ -473,34 +579,6 @@
     </div>
 </div>
 
-<!-- Mobile Navigation -->
-<div class="md:hidden overflow-x-auto mobile-nav-items px-4 py-2 bg-background-secondary dark:bg-background-darkSecondary border-b border-border-DEFAULT dark:border-border-dark">
-    {{#each sections}}
-        {{#if this.is_selected}}
-            <a href="{{this.link.url}}" class="inline-block mr-4 text-primary-DEFAULT dark:text-primary-dark">{{this.link.text}}</a>
-        {{else}}
-            <a href="{{this.link.url}}" class="inline-block mr-4 text-text-DEFAULT dark:text-text-dark">{{this.link.text}}</a>
-        {{/if}}
-    {{/each}}
-</div>
-
-<!--SubSections -->
-<div class="bg-background-secondary border-b border-border-DEFAULT text-text-DEFAULT dark:bg-background-darkSecondary dark:border-border-dark dark:text-text-dark px-4 sm:px-8 py-3 flex items-center justify-between transition-colors duration-300 overflow-x-auto shadow-sm">
-    <div class="md:block hidden">
-        <!-- Desktop breadcrumbs placeholder -->
-    </div>
-
-    <div class="flex items-center space-x-4 overflow-x-auto whitespace-nowrap no-scrollbar">
-        {{#each subsections}}
-            {{#if this.is_selected}}
-                <a href="{{this.link.url}}" class="nav-item active text-text-heading font-medium dark:text-text-darkHeading">{{this.link.text}}</a>
-            {{else}}
-                <a href="{{this.link.url}}" class="nav-item text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark transition-colors duration-200">{{this.link.text}}</a>
-            {{/if}}
-        {{/each}}
-    </div>
-</div>
-
 <!-- Sidebar overlay for mobile -->
 <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
@@ -512,8 +590,8 @@
 <!-- Main container -->
 <div class="flex mx-auto">
     <!-- Sidebar for navigation -->
-    <aside id="sidebar" class="sidebar w-64 md:w-64 bg-background-DEFAULT border-r border-border-DEFAULT text-text-DEFAULT dark:bg-background-dark dark:border-border-dark dark:text-text-dark md:sticky top-0 h-screen overflow-y-auto p-6 pt-4 transition-colors duration-300">
-        <div class="pt-6"><!-- Further reduced space for header -->
+    <aside id="sidebar" class="sidebar bg-background-DEFAULT border-r border-border-DEFAULT text-text-DEFAULT dark:bg-background-dark dark:border-border-dark dark:text-text-dark md:sticky top-0 h-screen p-6 pt-4 transition-colors duration-300">
+        <div class="pt-5">
             <!-- Mobile close button -->
             <div class="flex justify-end items-center md:hidden mb-3">
                 <button id="close-sidebar" class="text-text-DEFAULT dark:text-text-dark btn-icon">
@@ -522,7 +600,7 @@
             </div>
             
             <!-- TOC Header for all screen sizes -->
-            <div class="toc-header">
+            <div class="toc-header mb-3">
                 <div class="toc-title gradient-text">
                     <i class="fas fa-book-open toc-title-icon"></i>
                     <span>Table of Contents</span>
@@ -534,14 +612,14 @@
                 {{#each toc.items}}
                     <div class="toc-section">
                         {{#if this.is_selected}}
-                            <div class="sidebar-item active pl-3 rounded-md">
-                                <a href="{{this.link.url}}" class="block text-primary-DEFAULT dark:text-primary-dark">
+                            <div class="sidebar-item active">
+                                <a href="{{this.link.url}}" class="text-primary-DEFAULT dark:text-primary-dark">
                                     {{this.link.text}}
                                 </a>
                             </div>
                         {{else}}
-                            <div class="sidebar-item pl-3 rounded-md">
-                                <a href="{{this.link.url}}" class="block text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark">
+                            <div class="sidebar-item">
+                                <a href="{{this.link.url}}" class="text-text-DEFAULT hover:text-primary-DEFAULT dark:text-text-dark dark:hover:text-primary-dark">
                                     {{this.link.text}}
                                 </a>
                             </div>
@@ -553,7 +631,7 @@
     </aside>
 
     <!-- Main Content Area Starts -->
-    <main class="w-full p-4 md:p-6 bg-background-DEFAULT dark:bg-background-dark overflow-y-auto no-scrollbar transition-colors duration-300">
+    <main class="w-full p-4 md:p-6 lg:p-8 bg-background-DEFAULT dark:bg-background-dark overflow-y-auto no-scrollbar transition-colors duration-300">
         <article class="prose prose-invert dark:prose-dark max-w-full md:max-w-3xl mx-auto transition-colors duration-300 break-words">
             {{{ content }}}
         </article>
